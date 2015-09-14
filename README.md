@@ -1,8 +1,8 @@
 ## PyroCMS 3 Cheat Sheet
 
-This is a PyroCMS 3 Cheat Sheet. 
+A list of commands and features for PyroCMS 3.
 
-[Live](http://websemantics.ca/)
+[PyroCMS 3 Cheat Sheet Live](hthttp://websemantics.github.io/pyrocms-cheatsheet)
 
 ### Contribution
 
