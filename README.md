@@ -2,7 +2,7 @@
 
 A list of commands and features for PyroCMS 3.
 
-[PyroCMS 3 Cheat Sheet Live](hthttp://websemantics.github.io/pyrocms-cheatsheet)
+[PyroCMS 3 Cheat Sheet Live](http://websemantics.github.io/pyrocms-cheatsheet)
 
 ### Contribution
 
