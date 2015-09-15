@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <title>PyroCMS 3 Cheat Sheet</title>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/semantic.min.js"></script>
+  <script src="js/jquery.highlight.js"></script>
+  <script src="js/run_prettify.js"></script>
+  <script src="js/index.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+  <div></div>
+  <div class="ui borderless main menu">
+    <div id="container" class="ui text container">
+      <div class="header item">
+        <img id="logo" class="logo" src="img/logo.png">
+        <img id="logo-inverted" class="logo" src="img/logo-inverted.png">
+        <h2>PyroCMS 3 Cheat Sheet</h2>
+      </div>
+      <div class="item">
+      <iframe src="https://ghbtns.com/github-btn.html?user=websemantics&repo=pyrocms-cheatsheet&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      </div>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui action input">
+            <input id="search-input" type="text" placeholder="Search...">
+            <button id="search-btn" class="ui icon button blue">
+              <i class="search icon"></i>
+            </button>
+          </div>
+        </div>
+          <a href="http://websemantics.github.io/pyrocms-cheatsheet/" target="_blank" class="ui right floated item"><i class="github icon"></i> Github</a>
+          <a href="https://www.pyrocms.com/docs/pyrocms/setup/installation" target="_blank" class="ui right floated item">PyroCMS Docs</a>
+        <div class="item">
+          <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label id="lights-label">Lights On</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container" class="ui container">
+    <div class="ui three column stackable grid">
+      <div class="column">
+
+        <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
+       
+                <pre class="prettyprint lang-php">
+// Displays help for a given command
+php artisan --help OR -h
+// Do not output any message
+php artisan --quiet OR -q
+// Display this application version
+php artisan --version OR -V
+// Do not ask any interactive question
+php artisan --no-interaction OR -n
+// Force ANSI output
+php artisan --ansi
+// Disable ANSI output
+php artisan --no-ansi
+// The environment the command should run under
+php artisan --env
+// -v|vv|vvv Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+php artisan --verbose
+
+// Display the framework change list
+php artisan changes
+// Remove the compiled class file
+php artisan clear-compiled
+// Put the application into maintenance mode
+php artisan down
+// Regenerate framework autoload files
+php artisan dump-autoload
+// Display the current framework environment
+php artisan env
+// Displays help for a command
+php artisan help
+// Lists commands
+php artisan list
+
+// Optimize the framework for better performance
+php artisan optimize
+// List all registered routes
+php artisan routes
+// Serve the application on the PHP development server
+php artisan serve
+// Change the default port
+php artisan serve --port 8080
+// Get it to work outside localhost
+php artisan serve --host 0.0.0.0
+// Interact with your application
+php artisan tinker
+// Bring the application out of maintenance mode
+php artisan up
+// Create a new package workbench
+php artisan workbench
+
+// Publish a package's assets to the public directory
+php artisan asset:publish [--bench[="vendor/package"]] [--path[="..."]] [package]
+// Create a migration for the password reminders table
+php artisan auth:reminders-table
+// Flush the application cache
+php artisan cache:clear
+// Create a new Artisan command (L3:task)
+php artisan command:make name [--command[="..."]] [--path[="..."]] [--namespace[="..."]]
+// Publish a package's configuration to the application
+php artisan config:publish
+// Create a new resourceful controller
+php artisan controller:make [--bench="vendor/package"]
+// Seed the database with records
+php artisan db:seed [--class[="..."]] [--database[="..."]]
+// Set the application key
+php artisan key:generate</pre>
+
+
+      </div>
+      <div class="column">
+        <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
+          <pre class="prettyprint lang-php">Route::get('foo', function(){});
+Route::get('foo', 'ControllerName@function');
+Route::controller('foo', 'FooController');
+                </pre>
+
+                <h4>RESTful Controllers</h4>
+                <pre class="prettyprint lang-php">Route::resource('posts','PostsController');
+//Specify a subset of actions to handle on the route
+Route::resource('photo', 'PhotoController',['only' => ['index', 'show']]);
+Route::resource('photo', 'PhotoController',['except' => ['update', 'destroy']]);
+                </pre>
+
+                <h4>Triggering Errors</h4>
+                <pre class="prettyprint lang-php">App::abort(404);
+App::missing(function($exception){});
+throw new NotFoundHttpException;
+                </pre>
+
+                <h4>Route Parameters</h4>
+                <pre class="prettyprint lang-php">Route::get('foo/{bar}', function($bar){});
+Route::get('foo/{bar?}', function($bar = 'bar'){});
+                </pre>
+
+                <h4>HTTP Verbs</h4>
+                <pre class="prettyprint lang-php">Route::any('foo', function(){});
+Route::post('foo', function(){});
+Route::put('foo', function(){});
+Route::patch('foo', function(){});
+Route::delete('foo', function(){});
+// RESTful actions
+Route::resource('foo', 'FooController');
+                </pre>
+
+      </div>
+      <div class="column">
+        <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3><pre class="prettyprint lang-php">
+Log::info('info');
+Log::info('info',array('context'=>'additional info'));
+Log::error('error');
+Log::warning('warning');
+// get monolog instance
+Log::getMonolog();
+// add listener
+Log::listen(function($level, $message, $context) {});
+// get all ran queries.
+DB::getQueryLog();
+                </pre>
+
+                <h4>URLs</h4>
+                <pre class="prettyprint lang-php">URL::full();
+URL::current();
+URL::previous();
+URL::to('foo/bar', $parameters, $secure);
+URL::action('FooController@method', $parameters, $absolute);
+URL::route('foo', $parameters, $absolute);
+URL::secure('foo/bar', $parameters);
+URL::asset('css/foo.css', $secure);
+URL::secureAsset('css/foo.css');
+URL::isValidUrl('http://example.com');
+URL::getRequest();
+URL::setRequest($request);
+URL::getGenerator();
+URL::setGenerator($generator);
+                </pre>
+
+
+                <h4><a name="events" href="#events">Events</a> <a href="http://laravel.com/docs/events" title="Events @ PyroCMS Docs"><i class="icon-file-text"></i></a></h4>
+                <pre class="prettyprint lang-php">Event::fire('foo.bar', array($bar));
+Event::listen('foo.bar', function($bar){});
+Event::listen('foo.*', function($bar){});
+Event::listen('foo.bar', 'FooHandler', 10);
+Event::listen('foo.bar', 'BarHandler', 5);
+Event::listen('foor.bar', function($event){ return false; });
+Event::queue('foo', array($bar));
+Event::flusher('foo', function($bar){});
+Event::flush('foo');
+Event::forget('foo');
+Event::subscribe(new FooEventHandler);
+                </pre>
+
+                <h4><a name="db" href="#db">Database</a> <a href="http://laravel.com/docs/queries" title="Query Builder @ PyroCMS Docs"><i class="icon-file-text"></i></a></h4>
+                <pre class="prettyprint lang-php">
+DB::connection('connection_name');
+DB::statement('drop table users');
+DB::listen(function($sql, $bindings, $time){ code_here; });
+DB::transaction(function(){ transaction_code_here; });
+// Cache a query for $time minutes
+DB::table('users')->remember($time)->get();
+// Escape raw input
+DB::raw('sql expression here');
+                </pre>
+      </div>
+    </div>
+</body>
+</html>
