@@ -10,8 +10,7 @@ This project is stil work in progress. Open an issue or send a pull request if y
 
 ### Open Source Projects Used
 
-* JQuery https://github.com/jquery/jquery
-* JQuery Highlight https://github.com/bartaz/sandbox.js/blob/master/jquery.highlight.js
-* Google Code Prettify https://github.com/google/code-prettify
-* Google Code Prettify https://github.com/google/code-prettify
 * Semantics UI https://github.com/semantic-org/semantic-ui/
+* Google Code Prettify https://github.com/google/code-prettify
+* JQuery Highlight https://github.com/bartaz/sandbox.js/blob/master/jquery.highlight.js
+* JQuery https://github.com/jquery/jquery
