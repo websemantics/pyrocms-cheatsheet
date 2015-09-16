@@ -57,171 +57,130 @@
     <div class="ui three column stackable grid">
       <div class="column">
 
-        <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
+        <h3 class="ui dividing header">Installation <i class="download icon"></i></h3>
+       
+                <pre class="prettyprint lang-bsh">
+# Use 'create-project' command to install PyroCMS
+composer create-project pyrocms/pyrocms folder_name
+# Use '--prefer-source' flag for Windows environment
+composer create-project pyrocms/pyrocms --prefer-dist
+# Enable write permissions for some folders
+sudo chmod -R 777 path_to/pyrocms/storage
+sudo chmod -R 777 path_to/pyrocms/public/assets
+sudo chmod -R 777 path_to/pyrocms/bootstrap/cache
+# Or change pyrocms folder ownership
+sudo chown -R user:admin path_to/pyrocms
+</pre>
+        <h3 class="ui dividing header">Configuration <i class="setting icon"></i></h3>
        
                 <pre class="prettyprint lang-php">
-// Displays help for a given command
-php artisan --help OR -h
-// Do not output any message
-php artisan --quiet OR -q
-// Display this application version
-php artisan --version OR -V
-// Do not ask any interactive question
-php artisan --no-interaction OR -n
-// Force ANSI output
-php artisan --ansi
-// Disable ANSI output
-php artisan --no-ansi
-// The environment the command should run under
-php artisan --env
-// -v|vv|vvv Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-php artisan --verbose
+// Overrid Streams Platform configuration values at
+path_to/pyrocms/config/streams
+// Available config files for Streams located at 
+path_to/pyrocms/vendor/anomaly/streams-platform
+/resources/config
+// Set application environment in .env, 'local'
+// 'staging' or 'production'
+APP_ENV = local
+// Edit .env config file to enable debug mode
+APP_DEBUG = true
+// Get current env variable in php
+$env = App::environment();
+$env = app()->environment();
+// Use config helper to access configuration values
+$value = config('app.locale');
+// Set configuration values through config helper 
+config(['app.locale' => 'fr']);
+// Get core configuration values
+$value = config('streams::assets.paths');
+// Get Addon configuration, 'name' module
+$value = config('vendor.module.slug::name.key');
 
-// Display the framework change list
-php artisan changes
-// Remove the compiled class file
-php artisan clear-compiled
-// Put the application into maintenance mode
-php artisan down
-// Regenerate framework autoload files
-php artisan dump-autoload
-// Display the current framework environment
-php artisan env
-// Displays help for a command
-php artisan help
-// Lists commands
-php artisan list
-
-// Optimize the framework for better performance
-php artisan optimize
-// List all registered routes
-php artisan routes
-// Serve the application on the PHP development server
-php artisan serve
-// Change the default port
-php artisan serve --port 8080
-// Get it to work outside localhost
-php artisan serve --host 0.0.0.0
-// Interact with your application
-php artisan tinker
-// Bring the application out of maintenance mode
-php artisan up
-// Create a new package workbench
-php artisan workbench
-
-// Publish a package's assets to the public directory
-php artisan asset:publish [--bench[="vendor/package"]] [--path[="..."]] [package]
-// Create a migration for the password reminders table
-php artisan auth:reminders-table
-// Flush the application cache
-php artisan cache:clear
-// Create a new Artisan command (L3:task)
-php artisan command:make name [--command[="..."]] [--path[="..."]] [--namespace[="..."]]
-// Publish a package's configuration to the application
-php artisan config:publish
-// Create a new resourceful controller
-php artisan controller:make [--bench="vendor/package"]
-// Seed the database with records
-php artisan db:seed [--class[="..."]] [--database[="..."]]
-// Set the application key
-php artisan key:generate</pre>
-
-
+                </pre>
       </div>
       <div class="column">
         <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
-          <pre class="prettyprint lang-php">Route::get('foo', function(){});
-Route::get('foo', 'ControllerName@function');
-Route::controller('foo', 'FooController');
-                </pre>
-
-                <h4>RESTful Controllers</h4>
-                <pre class="prettyprint lang-php">Route::resource('posts','PostsController');
-//Specify a subset of actions to handle on the route
-Route::resource('photo', 'PhotoController',['only' => ['index', 'show']]);
-Route::resource('photo', 'PhotoController',['except' => ['update', 'destroy']]);
-                </pre>
-
-                <h4>Triggering Errors</h4>
-                <pre class="prettyprint lang-php">App::abort(404);
-App::missing(function($exception){});
-throw new NotFoundHttpException;
-                </pre>
-
-                <h4>Route Parameters</h4>
-                <pre class="prettyprint lang-php">Route::get('foo/{bar}', function($bar){});
-Route::get('foo/{bar?}', function($bar = 'bar'){});
-                </pre>
-
-                <h4>HTTP Verbs</h4>
-                <pre class="prettyprint lang-php">Route::any('foo', function(){});
-Route::post('foo', function(){});
-Route::put('foo', function(){});
-Route::patch('foo', function(){});
-Route::delete('foo', function(){});
-// RESTful actions
-Route::resource('foo', 'FooController');
-                </pre>
-
+          <pre class="prettyprint lang-bsg">
+# Combine all configuration files into a single file
+php artisan config:cache
+# Enable maintenance mode
+php artisan down
+# Disable maintenance mode
+php artisan down
+# Set application key
+php artisan key:generate</pre>
+<h4>Streams</h4><pre class="prettyprint lang-bsg">
+# Create a stream migration (fields or stream)
+php artisan make:migration create_stream_fields 
+--addon=vendor.module.slug</pre>
+<h4>Addons</h4><pre class="prettyprint lang-bsg">
+# Create a theme
+php artisan make:addon vendor.theme.slug
+# Create a shared theme
+php artisan make:addon vendor.theme.slug --shared
+# Create a plugin 
+php artisan make:addon vendor.plugin.slug
+</pre>
+<h4>Modules</h4><pre class="prettyprint lang-bsg">
+# Create a module, add '--shared' for shared
+php artisan make:addon ventor.module.slug
+# Install, uninstall and reinstall a module
+php artisan module:install vendor.module.slug
+php artisan module:uninstall vendor.module.slug
+php artisan module:reinstall vendor.module.slug
+# Seed the module's streams / entities
+php artisan db:seed --addon=vendor.module.slug</pre>
+<h4>Entities</h4><pre class="prettyprint lang-bsg">
+# Create a stream entity. This will create a stream
+# migratiom, and an entity folder inside the addon's
+# 'src' folder.
+php artisan make:entity stream_slug 
+ventor.addon_type.addon_slug
+</pre>
+<h4>Migration</h4><pre class="prettyprint lang-bsg">
+# Manage migrations manually
+php artisan migrate --addon=vendor.module.slug
+php artisan migrate:reset --addon=vendor.module.slug
+php artisan migrate:refresh --addon=vendor.module.slug
+</pre>
       </div>
       <div class="column">
-        <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3><pre class="prettyprint lang-php">
-Log::info('info');
-Log::info('info',array('context'=>'additional info'));
-Log::error('error');
-Log::warning('warning');
-// get monolog instance
-Log::getMonolog();
-// add listener
-Log::listen(function($level, $message, $context) {});
-// get all ran queries.
-DB::getQueryLog();
-                </pre>
+        <h3 class="ui dividing header">Views <i class="file text outline icon"></i></h3>
+        <pre class="prettyprint lang-php">
+// Return a view using 'view' helper function.
+// Views are location at: path_to/pyrocms/addons/
+// shared/vendor/name-module/resources/views
+return view('vendor.module.slug::page', 
+['title' => 'app']);
+// Return a view from nested folder 'admin'
+return view('vendor.module.slug::admin.page', []);
+// Check if a view exists
+if (view()->exists('vendor.module.slug::page')) {}
+// Return a view from active theme
+return view('theme::page', $data);
+// Return a view from active module
+return view('module::page', $data);
+// Passing $data as an array with key/value pairs
+return view('module::page', ['name','Jo']);
+// Passing individual key/value using 'with' method
+return view('module::page')->with('name','Jo');
+// Share data with all views. Place in Service 
+// Provider's 'boot' method
+view()->share('key', 'value');
+ </pre>
+  <h3 class="ui dividing header">Twig <i class="puzzle outline icon"></i></h3>
+  <pre class="prettyprint lang-php">
+// Loop through files
+{% for file in entry.example %}
+    File {{ loop.index }} is a {{ file.mime_type }}.
+{% endfor %}
+ </pre>
 
-                <h4>URLs</h4>
-                <pre class="prettyprint lang-php">URL::full();
-URL::current();
-URL::previous();
-URL::to('foo/bar', $parameters, $secure);
-URL::action('FooController@method', $parameters, $absolute);
-URL::route('foo', $parameters, $absolute);
-URL::secure('foo/bar', $parameters);
-URL::asset('css/foo.css', $secure);
-URL::secureAsset('css/foo.css');
-URL::isValidUrl('http://example.com');
-URL::getRequest();
-URL::setRequest($request);
-URL::getGenerator();
-URL::setGenerator($generator);
-                </pre>
-
-
-                <h4><a name="events" href="#events">Events</a> <a href="http://laravel.com/docs/events" title="Events @ PyroCMS Docs"><i class="icon-file-text"></i></a></h4>
-                <pre class="prettyprint lang-php">Event::fire('foo.bar', array($bar));
-Event::listen('foo.bar', function($bar){});
-Event::listen('foo.*', function($bar){});
-Event::listen('foo.bar', 'FooHandler', 10);
-Event::listen('foo.bar', 'BarHandler', 5);
-Event::listen('foor.bar', function($event){ return false; });
-Event::queue('foo', array($bar));
-Event::flusher('foo', function($bar){});
-Event::flush('foo');
-Event::forget('foo');
-Event::subscribe(new FooEventHandler);
-                </pre>
-
-                <h4><a name="db" href="#db">Database</a> <a href="http://laravel.com/docs/queries" title="Query Builder @ PyroCMS Docs"><i class="icon-file-text"></i></a></h4>
-                <pre class="prettyprint lang-php">
-DB::connection('connection_name');
-DB::statement('drop table users');
-DB::listen(function($sql, $bindings, $time){ code_here; });
-DB::transaction(function(){ transaction_code_here; });
-// Cache a query for $time minutes
-DB::table('users')->remember($time)->get();
-// Escape raw input
-DB::raw('sql expression here');
-                </pre>
       </div>
     </div>
 </body>
 </html>
+
+
+
+
