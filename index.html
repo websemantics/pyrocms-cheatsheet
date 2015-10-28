@@ -193,6 +193,12 @@ view()->share('key', 'value');
     File {{ loop.index }} is a {{ file.mime_type }}.
 {% endfor %}
  </pre>
+  <pre class="prettyprint lang-php">
+// Insert image from the current theme
+ {{ image_url('theme::img/image.png') }}
+ </pre>
+ 
+ 
 
       </div>
     </div>
