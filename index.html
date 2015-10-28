@@ -192,12 +192,11 @@ view()->share('key', 'value');
 {% for file in entry.example %}
     File {{ loop.index }} is a {{ file.mime_type }}.
 {% endfor %}
- </pre>
-  <pre class="prettyprint lang-php">
 // Insert image from the current theme
  {{ image_url('theme::img/image.png') }}
+// Embed a view partial
+  {{ view("websemantics.module.ibuild::partials/lite-signup") }}
  </pre>
- 
  
 
       </div>
