@@ -206,6 +206,24 @@ protected $overrides = [
 {{ image_url('theme::img/image.png') }}
 // Embed a view partial
 {{ view("vendor.module.slug::partials/file") }}
+// Granular control over forms; user login form
+// as an example which show how to add custom
+// CSS classes to the form an input elements.
+{% set form = login_form() %}
+
+{{ form.open({'class' : 'ui form'}) |raw }}
+
+{% for field in form.fields %}
+	<div class="field">
+		<label>{{ field.label|raw }}</label>
+    	{{ field.setClass('custom class').input|raw }}
+    </div>
+{% endfor %}
+
+{{ form.actions |raw }}
+
+{{ form.close() |raw }}
+
  </pre>
       </div>
     </div>
