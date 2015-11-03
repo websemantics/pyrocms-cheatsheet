@@ -185,7 +185,10 @@ return view('module::page')->with('name','Jo');
 // Share data with all views. Place in Service 
 // Provider's 'boot' method
 view()->share('key', 'value');
-// To override core pyro views, insert this in your module's service provider. The example below will override user the login form with a view in your module's resources folder, 'resources\views\users\login.twig'
+// To override core pyro views, insert this in your 
+module's service provider. The example below will 
+override user the login form with a view in your 
+module's resources folder, 'resources\views\users\login.twig'
 protected $overrides = [
    'anomaly.module.users::login' => 'vendor.module.slug::core/users/login'
 ];
