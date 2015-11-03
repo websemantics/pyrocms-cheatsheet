@@ -210,10 +210,10 @@ protected $overrides = [
 {% set form = login_form() %}
 {{ form.open({'class' : 'ui form'}) |raw }}
 {% for field in form.fields %}
-	<div class="field">
-		<label>{{ field.label|raw }}</label>
+	&lt;div class="field"&gt;
+		&lt;label&gt;{{ field.label|raw }}&lt;/label&gt;
 		{{ field.setClass('custom class').input|raw }}
-	</div>
+	&lt;/div&gt;
 {% endfor %}
 {{ form.actions |raw }}
 {{ form.close() |raw }}</pre>
