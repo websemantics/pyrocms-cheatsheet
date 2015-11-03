@@ -193,8 +193,7 @@ view()->share('key', 'value');
 protected $overrides = [
    'anomaly.module.users::login' => 
             'vendor.module.slug::core/users/login'
-];
- </pre>
+];</pre>
   <h3 class="ui dividing header">Twig <i class="puzzle outline icon"></i></h3>
   <pre class="prettyprint lang-php">
 // Loop through files
@@ -209,21 +208,15 @@ protected $overrides = [
 // as an example which show how to add custom
 // CSS classes to the form an input elements.
 {% set form = login_form() %}
-
 {{ form.open({'class' : 'ui form'}) |raw }}
-
 {% for field in form.fields %}
 	<div class="field">
 		<label>{{ field.label|raw }}</label>
-    	{{ field.setClass('custom class').input|raw }}
-    </div>
+		{{ field.setClass('custom class').input|raw }}
+	</div>
 {% endfor %}
-
 {{ form.actions |raw }}
-
-{{ form.close() |raw }}
-
- </pre>
+{{ form.close() |raw }}</pre>
       </div>
     </div>
 </body>
