@@ -89,7 +89,7 @@ sudo chmod -R 777 path_to/pyrocms/bootstrap/cache
 # Or change pyrocms folder ownership
 sudo chown -R user:admin path_to/pyrocms
 </pre>
-        <h3 class="ui dividing header">Configuration <i class="setting icon"></i></h3>
+        <h3 class="ui dividing header">Configuration <i class="configure icon"></i></h3>
        
                 <pre class="prettyprint lang-php">
 // Overrid Streams Platform configuration values at
@@ -113,8 +113,15 @@ config(['app.locale' => 'fr']);
 $value = config('streams::assets.paths');
 // Get Addon configuration, 'name' module
 $value = config('vendor.module.slug::name.key');
-
-                </pre>
+</pre>
+<h3 class="ui dividing header">Settings <i class="setting icon"></i></h3>
+       
+                <pre class="prettyprint lang-php">
+// To read a value from the settings module inject
+// Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface
+// into your class method then read the require field
+$val = $settings->value('vendor.module.slug::field_name'));
+              </pre>
       </div>
       <div class="column">
         <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
