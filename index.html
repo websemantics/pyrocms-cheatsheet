@@ -120,7 +120,11 @@ $value = config('vendor.module.slug::name.key');
 // To read a value from the settings module inject
 // Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface
 // into your class method then read the require field
-$val = $settings->value('vendor.module.slug::field_name'));
+public function index(SettingRepositoryInterface $settings)
+{
+$val = $settings->value(
+'vendor.module.slug::field_name'));
+}
               </pre>
       </div>
       <div class="column">
