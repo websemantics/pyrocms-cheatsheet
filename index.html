@@ -170,9 +170,19 @@ php artisan make:addon vendor.theme.slug --shared
 php artisan make:addon vendor.plugin.slug
             </pre>
             <h4>Modules</h4>
+            <h5>With Builder Extension</h5>
+           <pre class="prettyprint lang-bsg">
+# Create a module
+php artisan make:module vendor slug
+# Create a shared module
+php artisan make:module vendor slug --shared
+            </pre>
+            <h5>Without Builder Extension</h5>
             <pre class="prettyprint lang-bsg">
 # Create a module, add '--shared' for shared
 php artisan make:addon ventor.module.slug
+            <h5>Both</h5>
+            <pre class="prettyprint lang-bsg">
 # Install, uninstall and reinstall a module
 php artisan module:install vendor.module.slug
 php artisan module:uninstall vendor.module.slug
