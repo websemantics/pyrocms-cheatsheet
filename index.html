@@ -1,243 +1,276 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta property="og:title" content="PyroCMS 3 Cheat Sheet" />
-  <meta property="og:url" content="http://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo-1024.png"/>
-  <meta property="og:image" content="http://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo-1024.png"/>
-  <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo-1024.png"/>
-  <meta property="og:image:type" content="image/png"/>
-  <meta property="og:image:width" content="1024"/>
-  <meta property="og:image:height" content="1024"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta property="og:title" content="PyroCMS 3 Cheat Sheet"/>
+    <meta property="og:url"
+          content="http://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo-1024.png"/>
+    <meta property="og:image"
+          content="http://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo-1024.png"/>
+    <meta property="og:image:secure_url"
+          content="https://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo-1024.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="1024"/>
+    <meta property="og:image:height" content="1024"/>
 
-  <link rel="icon" type="image/png" href="img/logo_red_48.png">
-  <title>PyroCMS 3 Cheat Sheet</title>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/semantic.min.js"></script>
-  <script src="js/jquery.highlight.js"></script>
-  <script src="js/run_prettify.js"></script>
-  <script src="js/index.js"></script>
+    <link rel="icon" type="image/png" href="img/logo_red_48.png">
+    <title>PyroCMS 3 Cheat Sheet</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/jquery.highlight.js"></script>
+    <script src="js/run_prettify.js"></script>
+    <script src="js/index.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-67748923-1', 'auto');
-  ga('send', 'pageview');
+        ga('create', 'UA-67748923-1', 'auto');
+        ga('send', 'pageview');
 
-</script>
+    </script>
 </head>
 <body>
-  <div></div>
-  <div class="ui borderless main menu">
+<div></div>
+<div class="ui borderless main menu">
     <div id="container" class="ui text container">
-      <div class="header item">
-        <img id="logo" class="logo" src="img/logo_black_48.png">
-        <img id="logo-inverted" class="logo" src="img/logo_white_48.png">
-        <h2>PyroCMS 3 Cheat Sheet</h2>
-      </div>
-      <div class="item">
-      <iframe src="https://ghbtns.com/github-btn.html?user=websemantics&repo=pyrocms-cheatsheet&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-      </div>
-      <div class="right menu">
-        <div class="item">
-          <div class="ui action input">
-            <input id="search-input" type="text" placeholder="Search...">
-            <button id="search-btn" class="ui icon button blue">
-              <i class="search icon"></i>
-            </button>
-          </div>
+        <div class="header item">
+            <img id="logo" class="logo" src="img/logo_black_48.png">
+            <img id="logo-inverted" class="logo" src="img/logo_white_48.png">
+            <h2>PyroCMS 3 Cheat Sheet</h2>
         </div>
-          <a href="https://github.com/websemantics/pyrocms-cheatsheet" target="_blank" class="ui right floated item"><i class="github icon"></i> Github</a>
-          <a href="https://www.pyrocms.com/docs/pyrocms/setup/installation" target="_blank" class="ui right floated item">PyroCMS Docs</a>
-          <a href="http://cheats.jesse-obrien.ca/" target="_blank" class="ui right floated item">Laravel CS</a>
         <div class="item">
-          <div class="inline field">
-            <div class="ui toggle checkbox">
-              <input type="checkbox" tabindex="0" class="hidden">
-              <label id="lights-label">Lights On</label>
+            <iframe src="https://ghbtns.com/github-btn.html?user=websemantics&repo=pyrocms-cheatsheet&type=star&count=true&size=large"
+                    frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+        </div>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui action input">
+                    <input id="search-input" type="text" placeholder="Search...">
+                    <button id="search-btn" class="ui icon button blue">
+                        <i class="search icon"></i>
+                    </button>
+                </div>
             </div>
-          </div>
+            <a href="https://github.com/websemantics/pyrocms-cheatsheet" target="_blank"
+               class="ui right floated item"><i class="github icon"></i> Github</a>
+            <a href="https://www.pyrocms.com/docs/pyrocms/setup/installation" target="_blank"
+               class="ui right floated item">PyroCMS Docs</a>
+            <a href="http://cheats.jesse-obrien.ca/" target="_blank" class="ui right floated item">Laravel CS</a>
+            <div class="item">
+                <div class="inline field">
+                    <div class="ui toggle checkbox">
+                        <input type="checkbox" tabindex="0" class="hidden">
+                        <label id="lights-label">Lights On</label>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <div id="container" class="ui container">
+<div id="container" class="ui container">
     <div class="ui three column stackable grid">
-      <div class="column">
+        <div class="column">
+            <h3 class="ui dividing header">Installation <i class="download icon"></i></h3>
+            <pre class="prettyprint lang-bsh">
+                # Use 'create-project' command to install PyroCMS
+                composer create-project pyrocms/pyrocms folder_name
+                # Use '--prefer-source' flag for Windows environment
+                composer create-project pyrocms/pyrocms --prefer-dist
+                # Enable write permissions for some folders
+                sudo chmod -R 777 path_to/pyrocms/storage
+                sudo chmod -R 777 path_to/pyrocms/public/assets
+                sudo chmod -R 777 path_to/pyrocms/bootstrap/cache
+                # Or change pyrocms folder ownership
+                sudo chown -R user:admin path_to/pyrocms
+                # Install Stream from command line
+                ./artisan install:streams
+            </pre>
+            <h3 class="ui dividing header">Configuration <i class="configure icon"></i></h3>
+            <pre class="prettyprint lang-php">
+                // Overrid Streams Platform configuration values at
+                path_to/pyrocms/config/streams
+                // Available config files for Streams located at
+                path_to/pyrocms/vendor/anomaly/streams-platform
+                /resources/config
+                // Set application environment in .env, 'local'
+                // 'staging' or 'production'
+                APP_ENV = local
+                // Edit .env config file to enable debug mode
+                APP_DEBUG = true
+                // Get current env variable in php
+                $env = App::environment();
+                $env = app()->environment();
+                // Use config helper to access configuration values
+                $value = config('app.locale');
+                // Set configuration values through config helper
+                config(['app.locale' => 'fr']);
+                // Get core configuration values
+                $value = config('streams::assets.paths');
+                // Get Addon configuration, 'name' module
+                $value = config('vendor.module.slug::name.key');
+            </pre>
+            <h3 class="ui dividing header">Settings <i class="setting icon"></i></h3>
+            <pre class="prettyprint lang-php">
+                // To read a value from the settings module inject
+                // Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface
+                // into your class method then read the require field
+                function index(SettingRepositoryInterface $settings)
+                {
+                $val = $settings->value(
+                'vendor.module.slug::field_name','default'));
+                }
+          </pre>
+        </div>
+        <div class="column">
+            <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
+            <pre class="prettyprint lang-bsg">
+                # Combine all configuration files into a single file
+                php artisan config:cache
+                # Enable maintenance mode
+                php artisan down
+                # Disable maintenance mode
+                php artisan down
+                # Set application key
+                php artisan key:generate
+            </pre>
+            <h4>Assets</h4>
+            <pre class="prettyprint lang-bsg">
+                # Clear the cache for assets
+                php artisan asset:clear
+            </pre>
+            <h4>Streams</h4>
+            <pre class="prettyprint lang-bsg">
+                # Create a stream migration (fields or stream)
+                php artisan make:migration create_stream_fields
+                --addon=vendor.module.slug
+                </pre>
+            <h4>Addons</h4>
+            <pre class="prettyprint lang-bsg">
+                # Create a theme
+                php artisan make:addon vendor.theme.slug
+                # Create a shared theme
+                php artisan make:addon vendor.theme.slug --shared
+                # Create a plugin
+                php artisan make:addon vendor.plugin.slug
+            </pre>
+            <h4>Modules</h4>
+            <pre class="prettyprint lang-bsg">
+                # Create a module, add '--shared' for shared
+                php artisan make:addon ventor.module.slug
+                # Install, uninstall and reinstall a module
+                php artisan module:install vendor.module.slug
+                php artisan module:uninstall vendor.module.slug
+                php artisan module:reinstall vendor.module.slug
+                # Seed the module's streams / entities
+                php artisan db:seed --addon=vendor.module.slug
+            </pre>
+            <h4>Entities</h4>
+            <pre class="prettyprint lang-bsg">
+                # Create a stream entity. This will create a stream
+                # migratiom, and an entity folder inside the addon's
+                # 'src' folder.
+                php artisan make:stream stream_slug
+                ventor.addon_type.addon_slug
+            </pre>
+            <h4>Migration</h4>
+            <pre class="prettyprint lang-bsg">
+                # Manage migrations manually
+                php artisan migrate --addon=vendor.module.slug
+                php artisan migrate:reset --addon=vendor.module.slug
+                php artisan migrate:refresh --addon=vendor.module.slug
+            </pre>
+            <h3 class="ui dividing header">Pyro Magic <i class="terminal icon"></i></h3>
+            <h4>Forms</h4>
+            <pre class="prettyprint lang-bsg">
+                #Your own Builder, add to bindings in service provider
+                protected $bindings = [
+                    'login' => 'Vendor\CoolNameModule\Your\Namespace\LoginFormBuilder',
+                ];
+                #Render with
+                {{ form('login') }}
 
-        <h3 class="ui dividing header">Installation <i class="download icon"></i></h3>
-       
-                <pre class="prettyprint lang-bsh">
-# Use 'create-project' command to install PyroCMS
-composer create-project pyrocms/pyrocms folder_name
-# Use '--prefer-source' flag for Windows environment
-composer create-project pyrocms/pyrocms --prefer-dist
-# Enable write permissions for some folders
-sudo chmod -R 777 path_to/pyrocms/storage
-sudo chmod -R 777 path_to/pyrocms/public/assets
-sudo chmod -R 777 path_to/pyrocms/bootstrap/cache
-# Or change pyrocms folder ownership
-sudo chown -R user:admin path_to/pyrocms
-# Install Stream from command line
-./artisan install:streams
+                #Form based on Streams (no builder required)
+                {{ form({'stream': slug, 'namespace': farts}).buttons(['cancel']).redirect('foo/bar').successMessage('You are da winner!') }}
+            </pre>
+        </div>
 
-</pre>
-        <h3 class="ui dividing header">Configuration <i class="configure icon"></i></h3>
-       
-                <pre class="prettyprint lang-php">
-// Overrid Streams Platform configuration values at
-path_to/pyrocms/config/streams
-// Available config files for Streams located at 
-path_to/pyrocms/vendor/anomaly/streams-platform
-/resources/config
-// Set application environment in .env, 'local'
-// 'staging' or 'production'
-APP_ENV = local
-// Edit .env config file to enable debug mode
-APP_DEBUG = true
-// Get current env variable in php
-$env = App::environment();
-$env = app()->environment();
-// Use config helper to access configuration values
-$value = config('app.locale');
-// Set configuration values through config helper 
-config(['app.locale' => 'fr']);
-// Get core configuration values
-$value = config('streams::assets.paths');
-// Get Addon configuration, 'name' module
-$value = config('vendor.module.slug::name.key');
-</pre>
-<h3 class="ui dividing header">Settings <i class="setting icon"></i></h3>
-       
-                <pre class="prettyprint lang-php">
-// To read a value from the settings module inject
-// Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface
-// into your class method then read the require field
-function index(SettingRepositoryInterface $settings)
-{
-$val = $settings->value(
-'vendor.module.slug::field_name','default'));
-}
-              </pre>
-      </div>
-      <div class="column">
-        <h3 class="ui dividing header">Artisan <i class="terminal icon"></i></h3>
-          <pre class="prettyprint lang-bsg">
-# Combine all configuration files into a single file
-php artisan config:cache
-# Enable maintenance mode
-php artisan down
-# Disable maintenance mode
-php artisan down
-# Set application key
-php artisan key:generate</pre>
-<h4>Assets</h4>
-# Clear the cache for assets
-php artisan asset:clear
-<h4>Streams</h4><pre class="prettyprint lang-bsg">
-# Create a stream migration (fields or stream)
-php artisan make:migration create_stream_fields 
---addon=vendor.module.slug</pre>
-<h4>Addons</h4><pre class="prettyprint lang-bsg">
-# Create a theme
-php artisan make:addon vendor.theme.slug
-# Create a shared theme
-php artisan make:addon vendor.theme.slug --shared
-# Create a plugin 
-php artisan make:addon vendor.plugin.slug
-</pre>
-<h4>Modules</h4><pre class="prettyprint lang-bsg">
-# Create a module, add '--shared' for shared
-php artisan make:addon ventor.module.slug
-# Install, uninstall and reinstall a module
-php artisan module:install vendor.module.slug
-php artisan module:uninstall vendor.module.slug
-php artisan module:reinstall vendor.module.slug
-# Seed the module's streams / entities
-php artisan db:seed --addon=vendor.module.slug</pre>
-<h4>Entities</h4><pre class="prettyprint lang-bsg">
-# Create a stream entity. This will create a stream
-# migratiom, and an entity folder inside the addon's
-# 'src' folder.
-php artisan make:stream stream_slug 
-ventor.addon_type.addon_slug
-</pre>
-<h4>Migration</h4><pre class="prettyprint lang-bsg">
-# Manage migrations manually
-php artisan migrate --addon=vendor.module.slug
-php artisan migrate:reset --addon=vendor.module.slug
-php artisan migrate:refresh --addon=vendor.module.slug
-</pre>
-      </div>
-      <div class="column">
-        <h3 class="ui dividing header">Views <i class="file text outline icon"></i></h3>
-        <pre class="prettyprint lang-php">
-// Return a view using 'view' helper function.
-// Views are location at: path_to/pyrocms/addons/
-// shared/vendor/name-module/resources/views
-return view('vendor.module.slug::page', 
-['title' => 'app']);
-// Return a view from nested folder 'admin'
-return view('vendor.module.slug::admin.page', []);
-// Check if a view exists
-if (view()->exists('vendor.module.slug::page')) {}
-// Return a view from active theme
-return view('theme::page', $data);
-// Return a view from active module
-return view('module::page', $data);
-// Passing $data as an array with key/value pairs
-return view('module::page', ['name','Jo']);
-// Passing individual key/value using 'with' method
-return view('module::page')->with('name','Jo');
-// Share data with all views. Place in Service 
-// Provider's 'boot' method
-view()->share('key', 'value');
-// To override core pyro views, insert this in your 
-// module's service provider. The example below will 
-// override the user login form with a view in your 
-// module's resources folder:
-// 'resources\views\users\login.twig'
-protected $overrides = [
-   'anomaly.module.users::login' => 
-            'vendor.module.slug::core/users/login'
-];
-// Override the form view directly from plugin call
-{{ login_form({'options': {'form_view': 
-'vendor.module.slug::streams/form/form'}}) }}</pre>
-  <h3 class="ui dividing header">Twig <i class="puzzle outline icon"></i></h3>
-  <pre class="prettyprint lang-php">
-// Loop through files
-{% for file in entry.example %}
-    File {{ loop.index }} is a {{ file.mime_type }}.
-{% endfor %}
-// Insert image from the current theme
-{{ image_url('theme::img/image.png') }}
-// Embed a view partial
-{{ view("vendor.module.slug::partials/file") }}
-// Granular control over forms; user login form
-// as an example which shows how to add custom
-// CSS classes to the form and input elements.
-{% set form = login_form() %}
-{{ form.open({'class' : 'ui form'}) |raw }}
-{% for field in form.fields %}
- &lt;div class="field"&gt;
-  &lt;label&gt;{{ field.label|raw }}&lt;/label&gt;
-  {{ field.setClass('custom class').input|raw }}
- &lt;/div&gt;
-{% endfor %}
-{{ form.actions |raw }}
-{{ form.close() |raw }}</pre>
-      </div>
+        <div class="column">
+            <h3 class="ui dividing header">Views <i class="file text outline icon"></i></h3>
+            <pre class="prettyprint lang-php">
+                // Return a view using 'view' helper function.
+                // Views are location at: path_to/pyrocms/addons/
+                // shared/vendor/name-module/resources/views
+                return view('vendor.module.slug::page',
+                ['title' => 'app']);
+                // Return a view from nested folder 'admin'
+                return view('vendor.module.slug::admin.page', []);
+                // Check if a view exists
+                if (view()->exists('vendor.module.slug::page')) {}
+                // Return a view from active theme
+                return view('theme::page', $data);
+                // Return a view from active module
+                return view('module::page', $data);
+                // Passing $data as an array with key/value pairs
+                return view('module::page', ['name','Jo']);
+                // Passing individual key/value using 'with' method
+                return view('module::page')->with('name','Jo');
+                // Share data with all views. Place in Service
+                // Provider's 'boot' method
+                view()->share('key', 'value');
+                // To override core pyro views, insert this in your
+                // module's service provider. The example below will
+                // override the user login form with a view in your
+                // module's resources folder:
+                // 'resources\views\users\login.twig'
+                protected $overrides = [
+                   'anomaly.module.users::login' =>
+                            'vendor.module.slug::core/users/login'
+                ];
+                // Override the form view directly from plugin call
+                {{ login_form({'options': {'form_view':
+                'vendor.module.slug::streams/form/form'}}) }}
+            </pre>
+            <h3 class="ui dividing header">Twig <i class="puzzle outline icon"></i></h3>
+            <pre class="prettyprint lang-php">
+                // Loop through files
+                {% for file in entry.example %}
+                    File {{ loop.index }} is a {{ file.mime_type }}.
+                {% endfor %}
+                // Insert image from the current theme
+                {{ image_url('theme::img/image.png') }}
+                // Embed a view partial
+                {{ view("vendor.module.slug::partials/file") }}
+                // Granular control over forms; user login form
+                // as an example which shows how to add custom
+                // CSS classes to the form and input elements.
+                {% set form = login_form() %}
+                {{ form.open({'class' : 'ui form'}) |raw }}
+                {% for field in form.fields %}
+                 &lt;div class="field"&gt;
+                  &lt;label&gt;{{ field.label|raw }}&lt;/label&gt;
+                  {{ field.setClass('custom class').input|raw }}
+                 &lt;/div&gt;
+                {% endfor %}
+                {{ form.actions |raw }}
+                {{ form.close() |raw }}
+            </pre>
+        </div>
     </div>
 </body>
 </html>
