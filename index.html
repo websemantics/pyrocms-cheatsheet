@@ -149,10 +149,14 @@ php artisan down
 # Set application key
 php artisan key:generate
             </pre>
-            <h4>Assets</h4>
+            <h4>Cache</h4>
             <pre class="prettyprint lang-bsg">
 # Clear the cache for assets
 php artisan asset:clear
+# Clear the cache for views
+php artisan view:clear
+# Clear the cache for twig
+php artisan twig:clean
             </pre>
             <h4>Streams</h4>
             <pre class="prettyprint lang-bsg">
