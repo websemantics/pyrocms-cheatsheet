@@ -1,0 +1,8 @@
+// To read a value from the settings module inject
+// Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface
+// into your class method then read the require field
+function index(SettingRepositoryInterface $settings)
+{
+    $val = $settings->value(
+    'vendor.module.slug::field_name','default'));
+}

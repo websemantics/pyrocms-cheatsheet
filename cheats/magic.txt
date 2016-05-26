@@ -1,0 +1,9 @@
+#Your own Builder, add to bindings in service provider
+protected $bindings = [
+    'login' => 'Vendor\CoolNameModule\Your\Namespace\LoginFormBuilder',
+];
+#Render with
+{{ form('login') }}
+
+#Form based on Streams (no builder required)
+{{ form({'stream': slug, 'namespace': farts}).buttons(['cancel']).redirect('foo/bar').successMessage('You are da winner!') }}

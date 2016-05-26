@@ -1,0 +1,8 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@importGoogleFonts : false;
+
+/* Path to font override folder */
+@fontPath  : '../fonts/semantic';

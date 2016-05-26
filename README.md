@@ -1,18 +1,15 @@
 # PyroCMS 3 Cheat Sheet
 
-A list of commands and features for [PyroCMS 3](https://www.pyrocms.com/). This project was inspired by [Laravel Cheat Sheet](https://github.com/jesseobrien/laravel-cheatsheet).
+A list of commands and features for [PyroCMS 3](https://www.pyrocms.com/).
 
-PyroCMS 3 Cheat Sheet [LIVE](http://websemantics.github.io/pyrocms-cheatsheet)
+### [Demo](http://websemantics.github.io/laravel-spark-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/laravel-spark-cheatsheet/issues)
 
 ![alt text](https://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo_red_64.png "PyroCMS 3 Cheat Sheet")
 
 ### Contribution
 
-This project is stil work in progress. Open an issue or send a pull request if you would like to contribute.
+This project is still work in progress. Open an issue or send a pull request if you would like to contribute.
 
-### Open Source Projects Used
+## Credits
 
-* Semantics UI https://github.com/semantic-org/semantic-ui/
-* Google Code Prettify https://github.com/google/code-prettify
-* JQuery Highlight https://github.com/bartaz/sandbox.js/blob/master/jquery.highlight.js
-* JQuery https://github.com/jquery/jquery
+This project was inspired by [Laravel5 Cheatsheet](https://github.com/summerblue/laravel5-cheatsheet)

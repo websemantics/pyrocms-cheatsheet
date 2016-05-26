@@ -1,0 +1,8 @@
+script: bash ./scripts.sh deploy
+language: node_js
+node_js:
+- '5'
+env:
+  global:
+  - GH_REF: github.com/websemantics/pyrocms-cheatsheet.git
+  - secure: eV4pxVdgt4aEt/aRNJCqWHrM90XGhdawaqNvUtpMrcK6haodrI0ZvlBx3bF9XZHNYAh3yNZDMZ9ku/d0VSMYbsFzltbDd5yGwuvVfwxjSK+nF17mrAEwO9aegdmgGzRfoItLJAmWNqXQXLoW4M7G4LQalHmiTsXwW/CzTUcIdiYSq+a/Vi7Jf1/SI0c7FRrBaJIWzu13vrqwOcom+fmUj31KSM6mWl62ck2hC53+lpi+XgkfqBDDehFE5cKQ3bEC3Kj+gCCjLR2knhI/vFGfbgHtpsoGqQVToCfyNq3GGO3FsCBZ/OHE9fNno1ZNMxCANLZ8wJK4CPqHS8C/pZ/0R3oKeMX3HqKgMyxbnBnC7HoF0LUD8XKb9kGyE+B0QWlKFRTZ+B7WoV2N+1y6BtmlqGqVJZXK4UcjLAJOjO9fFxClE/cbIU7t7/QtyxC9d3Sy1V8lbBr1bA/nLtcu+62lz4bXIyIkUEbgusXgAAKKY8zoquL3I4r+H3VfaXA4YuJoCqO2MipRzy+yr6S8VaOsQFr9rJXOHGigDlqEy1LcHdWLIenv83xBef2SXkbBtU5nHg6zP59xRGqt1HmQGAbpihMP8IhYoOBm35eVYEcuNPE59u9tUtPP0W4AJdMAoeHKZE2OaKOgjS2uc+miIkaX2xWKQ7XsWAkvjetQHq2un4Q=

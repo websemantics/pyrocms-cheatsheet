@@ -1,0 +1,32 @@
+// Return a view using 'view' helper function.
+// Views are location at: path_to/pyrocms/addons/
+// shared/vendor/name-module/resources/views
+return view('vendor.module.slug::page',
+['title' => 'app']);
+// Return a view from nested folder 'admin'
+return view('vendor.module.slug::admin.page', []);
+// Check if a view exists
+if (view()->exists('vendor.module.slug::page')) {}
+// Return a view from active theme
+return view('theme::page', $data);
+// Return a view from active module
+return view('module::page', $data);
+// Passing $data as an array with key/value pairs
+return view('module::page', ['name','Jo']);
+// Passing individual key/value using 'with' method
+return view('module::page')->with('name','Jo');
+// Share data with all views. Place in Service
+// Provider's 'boot' method
+view()->share('key', 'value');
+// To override core pyro views, insert this in your
+// module's service provider. The example below will
+// override the user login form with a view in your
+// module's resources folder:
+// 'resources\views\users\login.twig'
+protected $overrides = [
+   'anomaly.module.users::login' =>
+            'vendor.module.slug::core/users/login'
+];
+// Override the form view directly from plugin call
+{{ login_form({'options': {'form_view':
+'vendor.module.slug::streams/form/form'}}) }}

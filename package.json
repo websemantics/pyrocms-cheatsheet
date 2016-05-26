@@ -1,0 +1,30 @@
+{
+  "name": "pyrocms-cheatsheet",
+  "version": "0.1.0",
+  "description": "A quick reference cheat sheet for PyroCMS 3.",
+  "author": "Adnan M.Sagar, PhD.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/websemantics/pyrocms-cheatsheet.git"
+  },
+  "scripts": {
+    "postinstall" : "./scripts.sh install",
+    "build" : "gulp",
+    "deploy" : "./scripts.sh deploy"
+  },
+  "dependencies": {
+    "vue": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "semantic-ui": "*",
+    "jquery": "^2.1.4",
+    "laravel-elixir": "^5.0.0",
+    "google-code-prettify": "*",
+    "jquery-highlight": "*",
+    "isotope-layout": "*",
+    "handlebars": "*",
+    "bragit": "*"
+  }
+}

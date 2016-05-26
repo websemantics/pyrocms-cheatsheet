@@ -1,0 +1,494 @@
+/**
+ * @package    Laravel Spark Cheat Sheet
+ * @author     Web Semantics, Inc. Dev Team <info@websemantics.ca>
+ * @author     Musbah (Adnan) Sagar, PhD <adnan@websemantics.ca>
+ * @copyright  2011-2015 Web Semantics, Inc.
+ * @link       http://websemantics.ca
+ * @license    https://opensource.org/licenses/MIT
+ */
+
+@import './semantic/semantic';
+@import "./font";
+@import "./vars";
+
+body, html {
+     font-size: @font-size;
+     background-color: @body-bg;
+ }
+
+.hidden{
+  display:none!important;
+}
+
+.header.mobile {
+  margin:0px;
+  padding-left:10px
+}
+
+span.com ,
+.main.menu,
+.main.menu.placeholder{
+  display:block;
+  .ui.container {
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+  }
+}
+
+span.com + .pln {
+  white-space: normal;
+}
+
+.ui.footer {
+  a {
+    color:@white;
+  }
+  a:hover {
+    color: darken(@white, 10%);
+  }
+}
+
+ .filtros .button {
+   margin: 0em 0.45em 0.45em 0em;
+ }
+
+ #contentor {
+   margin: 1em 1em;
+ }
+
+#toc {
+  padding-top: 4em;
+}
+
+ /* Column layout is 2 */
+ #contentor .column {
+     width: ~"calc(50%)";
+ }
+
+/* Force one coloumn */
+ #contentor.force-one .column {
+     width: ~"calc(100%)";
+ }
+
+/* Only show icon of checkboxes */
+
+  .ui.checkbox {
+    label{
+      padding-left: 0.2em!important;
+      color: #E9E9E9!important;
+      &.ui.icon:before,
+      &.ui.icon:after {
+        display:none;
+      }
+      &:before,
+      &:after {
+        display:none!important;
+      }
+    }
+  }
+
+ .pusher > .full.height {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-flex-direction: row;
+       -ms-flex-direction: row;
+           flex-direction: row;
+ }
+
+ .full.height > .toc {
+   min-height: 1813px!important;
+   position: relative;
+   z-index: 1;
+   background-color: #1b1c1d;
+   width: 250px;
+   -webkit-box-flex: 0;
+   -webkit-flex: 0 0 auto;
+       -ms-flex: 0 0 auto;
+           flex: 0 0 auto;
+ }
+
+ .full.height > .toc .ui.menu {
+   border-radius: 0;
+   border-width: 0 1px 0 0;
+   box-shadow: none;
+   margin: 0;
+   width: inherit;
+   overflow: hidden;
+   will-change: transform;
+ }
+
+ .article {
+   -webkit-box-flex: 1;
+   -webkit-flex: 1 1 auto;
+       -ms-flex: 1 1 auto;
+           flex: 1 1 auto;
+   min-width: 0px;
+   min-height: 1813px!important;
+
+   &.inverted {
+     background-color: @inverted;
+
+     /* Give segment borders when inverted */
+     .ui.segment {
+       border: 1px solid @white;
+     }
+
+     /* Give the divider inside a segement a color when inverted*/
+     .ui.divider:not(.vertical):not(.horizontal) {
+         border-top: 1px solid @white;
+     }
+   }
+ }
+
+ /* Highlight color */
+ .highlight {
+   background-color: #2185d0;
+   color:#fff;
+ }
+
+ /* Hide divider between menu items */
+ .ui.menu .item:before,
+ .ui.vertical.inverted.menu .item:before,
+ .ui.inverted.menu .item:before{
+   background: none;
+ }
+
+ /* Hide Top Bar */
+ @media only screen and (min-width: 1145px) {
+   .main.menu, .main.menu.placeholder {
+     display: none!important;
+   }
+ }
+
+ @media only screen and (max-width: 1144px) {
+   .full.height > .toc,
+   .fixed.launch.button {
+     display: none !important;
+   }
+
+   .pushable > .pusher {
+       padding-top: 3.5em;
+   }
+
+   .fixed.menu > .container {
+     margin-left: 0em !important;
+     margin-right: 0em !important;
+     width: 100% !important;
+     max-width: none !important;
+   }
+ }
+
+ /* Change column layout from 2 to 1 */
+ @media only screen and (max-width: 768px) {
+     #contentor .column {
+         width: ~"calc(100%)";
+     }
+
+     .header.mobile {
+       display:none;
+     }
+ }
+
+/* Footer */
+
+.ui.footer {
+  margin-top: 7rem;
+  padding: 2rem 0 3rem 0;
+  background: @inverted;
+
+  img {
+    vertical-align: middle;
+    width:24px;
+    height:24px;
+  }
+/*
+  h4 a {
+    font-size: 1.5rem;
+    color: @text-color;
+  }
+  h4 a:hover {
+    color: @text-color-dark;
+  }
+*/
+}
+
+/* Bragit, http://websemantics.github.io/bragit/ */
+
+.ui.bragit.button,
+.ui.bragit.buttons .button {
+   background-color: #9e9e9e;
+   color: #fff!important;
+}
+
+.ui.bragit.label {
+   color: #9e9e9e!important;
+   border-color: #9e9e9e!important;
+   background-color: #ffffff;
+}
+
+.ui.bragit.button:focus,
+.ui.bragit.buttons .button:focus,
+.ui.bragit.button:hover,
+.ui.bragit.buttons .button:hover {
+   background-color: #848484;
+}
+
+.ui.bragit.labels .label:focus,
+.ui.bragit.label:focus,
+.ui.bragit.labels .label:hover,
+.ui.bragit.label:hover {
+   color: #848484!important;
+   border-color: #848484!important;
+}
+
+.ui.labeled .ui.button .star.icon {
+   color: #F5CC7A!important;
+}
+
+/*! Google-code-prettify, white, Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+
+.prettyprint {
+  background: #ffffff;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  border: 0 !important;
+}
+
+.pln {
+  color: #4d4d4c;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #8e908c;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  padding-left: 1em;
+  background-color: #ffffff;
+  list-style-type: decimal;
+}
+
+@media screen {
+
+  /* string content */
+
+  .str {
+    color: #718c00;
+  }
+
+  /* keyword */
+
+  .kwd {
+    color: #8959a8;
+  }
+
+  /* comment */
+
+  .com {
+    color: #8e908c;
+  }
+
+  /* type name */
+
+  .typ {
+    color: #4271ae;
+  }
+
+  /* literal value */
+
+  .lit {
+    color: #f5871f;
+  }
+
+  /* punctuation */
+
+  .pun {
+    color: #4d4d4c;
+  }
+
+  /* lisp open bracket */
+
+  .opn {
+    color: #4d4d4c;
+  }
+
+  /* lisp close bracket */
+
+  .clo {
+    color: #4d4d4c;
+  }
+
+  /* markup tag name */
+
+  .tag {
+    color: #c82829;
+  }
+
+  /* markup attribute name */
+
+  .atn {
+    color: #f5871f;
+  }
+
+  /* markup attribute value */
+
+  .atv {
+    color: #3e999f;
+  }
+
+  /* declaration */
+
+  .dec {
+    color: #f5871f;
+  }
+
+  /* variable name */
+
+  .var {
+    color: #c82829;
+  }
+
+  /* function name */
+
+  .fun {
+    color: #4271ae;
+  }
+}
+
+/*! Google-code-prettify, dark*/
+.inverted {
+    /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+    .prettyprint {
+      background: @inverted;
+      font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+      border: 0 !important;
+    }
+
+    .pln {
+      color: #cccccc;
+    }
+
+    /* Specify class=linenums on a pre to get line numbering */
+    ol.linenums {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #999999;
+    }
+
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L4,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8,
+    li.L9 {
+      padding-left: 1em;
+      background-color: @inverted;
+      list-style-type: decimal;
+    }
+
+    @media screen {
+
+      /* string content */
+
+      .str {
+        color: #99cc99;
+      }
+
+      /* keyword */
+
+      .kwd {
+        color: #cc99cc;
+      }
+
+      /* comment */
+
+      .com {
+        color: #999999;
+      }
+
+      /* type name */
+
+      .typ {
+        color: #6699cc;
+      }
+
+      /* literal value */
+
+      .lit {
+        color: #f99157;
+      }
+
+      /* punctuation */
+
+      .pun {
+        color: #cccccc;
+      }
+
+      /* lisp open bracket */
+
+      .opn {
+        color: #cccccc;
+      }
+
+      /* lisp close bracket */
+
+      .clo {
+        color: #cccccc;
+      }
+
+      /* markup tag name */
+
+      .tag {
+        color: #f2777a;
+      }
+
+      /* markup attribute name */
+
+      .atn {
+        color: #f99157;
+      }
+
+      /* markup attribute value */
+
+      .atv {
+        color: #66cccc;
+      }
+
+      /* declaration */
+
+      .dec {
+        color: #f99157;
+      }
+
+      /* variable name */
+
+      .var {
+        color: #f2777a;
+      }
+
+      /* function name */
+
+      .fun {
+        color: #6699cc;
+      }
+    }
+
+}

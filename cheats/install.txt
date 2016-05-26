@@ -1,0 +1,12 @@
+# Use 'create-project' command to install PyroCMS
+composer create-project pyrocms/pyrocms folder_name
+# Use '--prefer-source' flag for Windows environment
+composer create-project pyrocms/pyrocms --prefer-dist
+# Enable write permissions for some folders
+sudo chmod -R 777 path_to/pyrocms/storage
+sudo chmod -R 777 path_to/pyrocms/public/assets
+sudo chmod -R 777 path_to/pyrocms/bootstrap/cache
+# Or change pyrocms folder ownership
+sudo chown -R user:admin path_to/pyrocms
+# Install Stream from command line
+./artisan install:streams
