@@ -4,8 +4,6 @@ A list of commands and features for [PyroCMS 3](https://www.pyrocms.com/).
 
 ### [Demo](http://websemantics.github.io/laravel-spark-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/laravel-spark-cheatsheet/issues)
 
-![alt text](https://raw.githubusercontent.com/websemantics/pyrocms-cheatsheet/gh-pages/img/logo_red_64.png "PyroCMS 3 Cheat Sheet")
-
 ### Contribution
 
 This project is still work in progress. Open an issue or send a pull request if you would like to contribute.
