@@ -8,7 +8,7 @@ elixir(function (mix) {
   mix.less('index.less')
   .browserify('index.js')
   .copy('config.json', 'public/config.json')
-  .copy('data', 'public/data')
+  .copy('cheats', 'public/cheats')
   .copy('resources/assets/views/index.html', 'public/index.html')
   .copy('resources/assets/img', 'public/img')
   .copy('resources/assets/fonts', 'public/fonts/roboto')
