@@ -11,7 +11,7 @@ Cheat Sheets
 
 A list of commands and features for [PyroCMS 3](https://www.pyrocms.com/).
 
-### [Live](http://websemantics.github.io/laravel-spark-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/laravel-spark-cheatsheet/issues)
+### [Live](http://websemantics.github.io/pyrocms-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/pyrocms-cheatsheet/issues)
 
 ### Contribution
 
