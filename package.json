@@ -9,8 +9,7 @@
     "url": "git://github.com/websemantics/pyrocms-cheatsheet.git"
   },
   "scripts": {
-    "preinstall" : "./scripts.sh preinstall",
-    "postinstall" : "./scripts.sh install",
+    "postinstall" : "./scripts.sh postinstall",
     "build" : "gulp",
     "deploy" : "./scripts.sh deploy"
   },

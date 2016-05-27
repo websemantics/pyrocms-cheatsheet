@@ -43,7 +43,7 @@ $(function () {
                       <div class="header"><i class="right floated {{icon}} icon"></i>\
                       {{title}}</div>\
                       <div class="ui divider"></div>\
-                      <pre class="prettyprint lang-{{lang}}">{{content}}</pre>\
+                      <pre class="prettyprint lang-{{lang}}">{{{content}}}</pre>\
                     </div></div>', '<div data-filter=".{{id}}" class="ui {{color}} inverted tiny basic button">{{title}}</div>',
                     '<a class="ui labeled mini button github-{{repository}}-stars">\
                         <div class="ui  mini button"> <i class="star icon"></i> Stars </div>\
