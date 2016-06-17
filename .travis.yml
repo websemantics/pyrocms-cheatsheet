@@ -1,5 +1,7 @@
 script: npm run deploy
 language: node_js
+node_js:
+- '5'
 env:
   global:
   - GH_REF: github.com/websemantics/pyrocms-cheatsheet.git
