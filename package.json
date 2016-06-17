@@ -51,7 +51,7 @@
     "build:development": "NODE_ENV=development npm run build",
     "build:production": "NODE_ENV=production npm run build",
     "prebuild": "npm run clean -s && npm run build:init -s",
-    "deploy": "[ -z ${GH_TOKEN} ] && npm run deploy:travis -s || npm run deploy:local -s",
+    "deploy": "[ ${GH_TOKEN} ] && npm run deploy:travis -s || npm run deploy:local -s",
     "deploy:local": "repository=$(echo $npm_package_repository_url | sed 's/.*+//') && cd $npm_package_config_dir_dist && git push --force --quiet $repository master:gh-pages > /dev/null 2>&1",
     "deploy:travis": "cd $npm_package_config_dir_dist && git push --force --quiet \"https://${GH_TOKEN}@${GH_REF}\" master:gh-pages > /dev/null 2>&1",
     "predeploy": "npm run build && cd $npm_package_config_dir_dist && git init && git config user.name $npm_package_config_deploy_name && git config user.email $npm_package_config_deploy_email && git add . && git commit -m \"$npm_package_config_deploy_message\"",
