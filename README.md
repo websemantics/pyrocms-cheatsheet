@@ -40,7 +40,7 @@ npm run build
 ## Watch
 
 ``` bash
-# compile resources
+# watch resources
 npm run watch
 ```
 
