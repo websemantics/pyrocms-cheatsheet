@@ -1,5 +1,4 @@
-before_install: bash ./scripts.sh preinstall
-script: bash ./scripts.sh deploy
+script: npm run deploy
 language: node_js
 node_js:
 - '5'

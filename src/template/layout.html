@@ -1,0 +1,43 @@
+<html>
+<head>
+{{> meta }}
+</head>
+<body class="minimal pushable">
+    <div id="slider" class="ui vertical sidebar menu left">
+        {{> items }}
+    </div>
+    <div class="ui borderless fixed main menu">
+        <div class="ui container">
+            <a class="launch icon item">
+                <i class="content icon"></i>
+            </a>
+            <div class="item">
+                {{> logo }}
+            </div>
+            <div class="item">
+              <h3 class="header mobile cheats-title" >{{ title }}</h3>
+            </div>
+            <div class="right menu">
+              <div class="ui right aligned category search item">
+                <div id="header-search" class="ui transparent icon input">
+                  <input class="search-input" type="text" placeholder="Search...">
+                  <i class="search link icon"></i>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="pusher">
+        <div class="full height">
+            {{> toc }}
+            <div class="page">
+                {{{ contents }}}
+                <div id="contentor" class="ui column grid">
+                </div>
+            </div>
+        </div>
+        {{> footer }}
+    </div>
+    <script src="/js/index.js" type="text/javascript"></script>
+</body>
+</html>

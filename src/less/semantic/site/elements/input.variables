@@ -1,0 +1,9 @@
+/*******************************
+    User Variable Overrides  ('./../../../variables')
+*******************************/
+
+@inputBackground:  @baseInputBackground;
+@focusBorderColor: @baseFocusBorderColor;
+@inputColor: @baseInputColor;
+@downColor: @baseDownColor;
+@focusColor: @baseFocusColor;

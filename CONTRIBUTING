@@ -1,3 +1,10 @@
+0.1.1
+  date: 2016-06-17
+  changes:
+  - Update logo
+  - Major code refactoring
+  - Improved node-based build system
+
 0.1.0
   date: 2016-05-23
   changes:

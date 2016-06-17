@@ -1,0 +1,8 @@
+/*******************************
+    User Variable Overrides ('./../../../variables')
+*******************************/
+
+@headerColor: @baseHeaderColor;
+@metaMargin: @baseMetaMargin;
+@metaColor: @baseMetaColor;
+@dividedBorder: @baseDividedBorder;

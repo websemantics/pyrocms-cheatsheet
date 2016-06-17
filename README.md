@@ -13,27 +13,37 @@ A list of commands and features for [PyroCMS 3](https://www.pyrocms.com/).
 
 ### [Live](http://websemantics.github.io/pyrocms-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/pyrocms-cheatsheet/issues)
 
+
 ### Contribution
 
 This project is still work in progress. Open an issue or send a pull request if you would like to contribute.
 
+
 ## Install
 
-Clone this repo and install all Node.js packages, and configure Semantic-ui for the project.
+Clone this repo and install node dependencies
 
 ``` bash
 # install dependencies
-./scripts.sh install
+npm install
 ```
+
 
 ## Build
 
-The build process will populate the `public` folder with javascript and css files.
+``` bash
+# compile resources
+npm run build
+```
+
+
+## Watch
 
 ``` bash
 # compile resources
-gulp
+npm run watch
 ```
+
 
 ## Credits
 

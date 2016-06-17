@@ -1,0 +1,16 @@
+/*******************************
+    User Variable Overrides ('./../../../variables')
+*******************************/
+
+@fontFamily: @secondFontName;
+@background: @buttonBackground;
+@textColor: @buttonTextColor;
+@hoverColor: @buttonTextColor;
+@focusColor: @buttonTextColor;
+@downColor: @buttonTextColor;
+@activeColor: @buttonTextColor;
+@hoverBackgroundColor: @buttonHoverBackgroundColor;
+@focusBackgroundColor: @buttonFocusBackgroundColor;
+@downBackgroundColor: @buttonDownBackgroundColor;
+@activeBackgroundColor: @buttonActiveBackgroundColor;
+@activeHoverBackgroundColor: @buttonActiveHoverBackgroundColor;
