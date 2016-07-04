@@ -1,21 +1,5 @@
 @import "variables";
-.header.mobile {
-    /* common styles */
-    margin: 0;
-    padding-left: 10px;
-}
-svg.logo {
-    width: @logoWidth;
-    height: @logoWidth;
-    fill: @logoColor;
-}
-.ui.vertical.menu {
-    .item svg.logo {
-        fill: @sidebarLogoColor;
-        width: @sidebarLogoWidth;
-        height: @sidebarLogoHeight;
-    }
-}
+/*************************** [ global module] ****************************/
 .pusher > .full.height {
     display: -webkit-box;
     display: -webkit-flex;
@@ -24,40 +8,34 @@ svg.logo {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    & > .toc {
-        min-height: 1813px!important;
-        position: relative;
-        z-index: 1;
-        background-color: @sidebarBackgroundColor;
-        width: @sidebarWidth;
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        .ui.menu {
-            border-radius: 0;
-            border-width: 0;
-            background-color: @sidebarBackgroundColor;
-            box-shadow: none;
-            padding: @sidebarMenuPadding;
-            width: inherit;
-            overflow: hidden;
-            will-change: transform;
-            .item {
-                width: @sidebarContentWidth;
-                color: @sidebarItemTextColor;
-                margin: 0 auto;
-                text-align: @sidebarItemTextAlign;
-                &:first-child {
-                    img {
-                        width: @sidebarTopItemImgWidth;
-                        margin: @sidebarTopItemImgMargin;
-                    }
-                }
-            }
-        }
+}
+.ui.menu {
+    /* hide divider between menu items */
+    &.vertical .item:before,
+    .item:before,
+    .item:before {
+        background: none;
     }
 }
+/**************************** [ logo module] *****************************/
+svg.logo {
+    width: @logoWidth;
+    height: @logoHeight;
+    fill: @logoColor;
+}
+.inverted {
+  svg.logo {
+      fill: @logoInvertedColor;
+  }
+}
+.ui.vertical.menu .item {
+     svg.logo {
+        fill: @sidebarLogoColor;
+        width: @sidebarLogoWidth;
+        height: @sidebarLogoHeight;
+    }
+}
+/**************************** [ page module] *****************************/
 .page {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
@@ -99,52 +77,18 @@ svg.logo {
             color: @pageLinkHoverColor;
         }
     }
-}
-.ui.menu {
-    /* hide divider between menu items */
-    &.vertical .item:before,
-    .item:before,
-    .item:before {
-        background: none;
+    @media only screen and (max-width: @wideResolution) {
+        & {
+            margin: @pageMediumMargin;
+        }
     }
-    &.main {
-        border: 0!important;
-    }
-}
-@media only screen and (min-width: 1145px) {
-    /* hide top bar */
-    .main.menu,
-    .main.menu.placeholder {
-        display: none!important;
+    @media only screen and (max-width: @mediumResolution) {
+        & {
+            margin: @pageNarrowMargin;
+        }
     }
 }
-@media only screen and (max-width: 1144px) {
-    .fixed.launch.button,
-    .full.height > .toc {
-        display: none !important;
-    }
-    .page {
-        margin: @pageMediumMargin;
-    }
-    .fixed.menu > .container {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        max-width: none !important;
-    }
-    .ui.footer.vertical div:first-child {
-        display: none!important;
-    }
-}
-@media only screen and (max-width: 768px) {
-    /* change column layout from 2 to 1 */
-    .header.mobile {
-        display: none;
-    }
-    .page {
-        margin: @pageNarrowMargin;
-    }
-}
+/*************************** [ footer module] ****************************/
 .ui.footer {
     display: @footerDisplay;
     color: @basePrimaryColor;
@@ -162,6 +106,11 @@ svg.logo {
                 width: @sidebarWidth;
                 float: left;
                 background-color: @sidebarBackgroundColor;
+                @media only screen and (max-width: @wideResolution) {
+                    & { /* hide toc side of the footer */
+                        display: none!important;
+                    }
+                }
             }
             &:first-child when (@footerFullWide) {
                 /* hide left side of the footer when full width */
@@ -176,6 +125,94 @@ svg.logo {
         fill: @footerHeartColor;
     }
 }
+/******************** [ table of content (toc) module] *******************/
+.pusher > .full.height > .toc {
+    min-height: 1813px!important;
+    position: relative;
+    z-index: 1;
+    background-color: @sidebarBackgroundColor;
+    width: @sidebarWidth;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    .ui.menu {
+        border-radius: 0;
+        border-width: 0;
+        background-color: @sidebarBackgroundColor;
+        box-shadow: none;
+        padding: @sidebarMenuPadding;
+        width: inherit;
+        overflow: hidden;
+        will-change: transform;
+        .item {
+            width: @sidebarContentWidth;
+            color: @sidebarItemTextColor;
+            margin: 0 auto;
+            text-align: @sidebarItemTextAlign;
+            &:first-child {
+                img {
+                    width: @sidebarTopItemImgWidth;
+                    margin: @sidebarTopItemImgMargin;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: @wideResolution) {
+        & {
+            display: none !important;
+        }
+    }
+}
+/************************** [ main menu module] **************************/
+.ui.menu.main {
+  border: 0!important;
+  .header.title {
+      margin: 0;
+      padding-left: 10px;
+  }
+  @media only screen and (min-width: @wideResolution /* i.e. 1200px */) {
+    &, &.placeholder{
+      display: none!important;
+    }
+  }
+  @media only screen and (max-width: @wideResolution /* i.e. 1200px */) {
+    & > .container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+  }
+  @media only screen and (max-width: @narrowResolution) {
+      .header.title {
+          display: none;
+      }
+  }
+}
+/**************************** [ masonry module] ****************************/
+.masonry {
+  .brick {
+    width: @brickNarrowWidth!important;
+    margin: @brickMargin!important;
+    @media only screen and (min-width: @narrowResolution /* i.e. 640px */) {
+      & {
+        width: @brickMediumWidth!important;
+      }
+    }
+    @media only screen and (min-width: @mediumResolution /* i.e. 980px */) {
+      & {
+        width: @brickWideWidth!important;
+      }
+    }
+    @media only screen and (min-width: @wideResolution /* i.e. 1200px */) {
+      & {
+        width: @brickMaxWidth!important;
+      }
+    }
+  }
+}
+/*************************** [ slider module] ****************************/
 #slider {
     background-color: @sidebarBackgroundColor;
     width: @sidebarWidth;

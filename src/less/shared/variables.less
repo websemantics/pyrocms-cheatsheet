@@ -2,17 +2,17 @@
         Generic Colors
 *******************************/
 @whiteColor: #ffffff;
-@blackColor: #1b1c1d;
+@blackColor: #333333;
 @greyColor: #cccccc;
 @blueColor: #2185D0;
 @greenColor: #21BA45;
-@localPrimaryColor: #bdc3c7;
+@localPrimaryColor: @blueColor;
 /* used locally in factory */
 /*******************************
         Site Settings, less/semantic/site/globals/site.variables
 *******************************/
 @baseImportGoogleFonts: false;
-@baseFontPath: '../fonts/semantic';
+@baseFontPath: '../../fonts/semantic';
 /*-------------------
       Base Sizes
 --------------------*/
@@ -34,7 +34,7 @@
 --------------------*/
 @basePageBackground: @whiteColor;
 @baseTextColor: @blackColor;
-@pageWideMargin: 2em 2em;
+@pageWideMargin: 6em 2em;
 @pageMediumMargin: 6em 2em;
 @pageNarrowMargin: 6em 2em;
 @pageLinkColor: @greenColor;
@@ -74,24 +74,35 @@
 @logoWidth: 32px;
 @logoHeight: 32px;
 @logoColor: @blackColor;
+@logoInvertedColor: @whiteColor;
 /* Code */
 @invertedBackgroundColor: @blackColor;
 /* Left sidebar */
-@sidebarBackgroundColor: @blackColor;
-@sidebarWidth: 250px;
-@sidebarContentWidth: 100% !important;
+@sidebarBackgroundColor: @greyColor;
+@sidebarWidth: 300px;
+@sidebarContentWidth: 70% !important;
 @sidebarMenuPadding: 1em 0;
 @sidebarTopItemImgWidth: 100%;
 @sidebarTopItemImgMargin: 0 auto;
 @sidebarItemTextColor: @baseTextColor;
-@sidebarItemTextAlign: left;
-@sidebarLogoColor: @localPrimaryColor;
-@sidebarLogoWidth: 64px;
-@sidebarLogoHeight: 64px;
+@sidebarItemTextAlign: center;
+@sidebarLogoColor: @logoColor;
+@sidebarLogoWidth: 100%;
+@sidebarLogoHeight: 100%;
 /* Footer */
-@footerBackgroundColor: @blackColor;
+@footerBackgroundColor: @whiteColor;
 @footerDisplay: block;
 @footerFullWide: true;
 @footerHeartColor: #D8461D;
 @footerHeartWidth: 24px;
 @footerHeartHeight: 24px;
+/* Screen */
+@narrowResolution: 640px;
+@mediumResolution: 980px;
+@wideResolution: 1200px;
+/* Bricklayer */
+@brickMaxWidth: ~"calc(25% - 2em)";
+@brickWideWidth: ~"calc(33.333% - 2em)";
+@brickMediumWidth: ~"calc(50% - 2em)";
+@brickNarrowWidth: ~"calc(100% - 2em)";
+@brickMargin: 1em;

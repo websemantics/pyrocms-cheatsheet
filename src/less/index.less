@@ -1,15 +1,17 @@
 /**
  * @author     Web Semantics, Inc. Dev Team <info@websemantics.ca>
  * @author     Adnan M.Sagar, PhD. <adnan@websemantics.ca>
- * @copyright  2011-2016 Web Semantics, Inc.
+ * @copyright  2011-2015 Web Semantics, Inc.
  * @link       http://websemantics.ca
  * @license    https://opensource.org/licenses/MIT
  */
+
 @import "semantic/semantic";
-@import "shared/variables";
+@import "variables";
 @import "shared/fonts";
 @import "shared/prettify";
 @import "shared/styles";
+
 /* Highlight color */
 .highlight {
     background-color: #2185d0;
@@ -20,7 +22,7 @@
     margin: 0;
     padding: 0;
 }
-.filtros .button {
+.filter .button {
     margin: 0 0.45em 0.45em 0;
 }
 .ui.checkbox {
@@ -51,23 +53,7 @@
         font-family: @secondFontName;
     }
 }
-/* Column layout is 2 */
-#contentor {
-    margin: 1em;
-    &.force-one .column {
-        width: ~"calc(100%)";
-    }
-    .column {
-        width: ~"calc(50%)";
-    }
-}
-@media only screen and (max-width: 768px) {
-    #contentor {
-        .column {
-            width: ~"calc(100%)";
-        }
-    }
-}
+
 .main.menu,
 .main.menu.placeholder,
 span.com {
@@ -76,6 +62,21 @@ span.com {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+    /* header */
+    .header {
+        margin-left: -1.3em;
+    }
+    @media only screen and (max-width: @narrowResolution) {
+        .header {
+            display: none!important;
+        }
+    }
+    &.inverted {
+      .header {
+          color: @localPrimaryColor
+      }
+    }
+
 }
 span.com + .pln {
     white-space: normal;
@@ -98,15 +99,8 @@ span.com + .pln {
     color: @localPrimaryColor;
   }
 }
-/* .cheats-title */
-.header.mobile {
-    margin-left: -1em;
-}
-.ui.inverted.container {
-    .header.mobile.cheats-title {
-        color: @localPrimaryColor;
-    }
-    svg.logo {
-        fill: @sidebarLogoColor;
+.masonry.force-one {
+    .brick {
+        width: ~"calc(100%)"!important;
     }
 }

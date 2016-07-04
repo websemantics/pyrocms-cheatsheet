@@ -1,105 +1,110 @@
 {
   "name": "pyrocms-cheatsheet",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A quick reference cheat sheet for PyroCMS 3.",
-  "homepage": "https://github.com/websemantics/pyrocms-cheatsheet#readme",
-  "main": "build.js",
-  "repository" : {
-    "type" : "git",
-    "url" : "websemantics/pyrocms-cheatsheet.git"
+  "homepage": "https://github.com/websemantics/pyrocms-cheatsheet",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "websemantics/pyrocms-cheatsheet.git"
   },
-  "company": "Web Semantics, Inc.",
-  "config" : {
-    "minify" : true,
+  "config": {
+    "minify": false,
     "deploy": {
       "name": "iAyeBot",
       "email": "iayebot@websemantics.ca",
+      "branch": "gh-pages",
       "message": "Deploy to gh-pages"
     },
-    "semantic" : {
-      "install" : true,
-      "src" : "./node_modules/semantic-ui/src/",
-      "config" : "./src/less/semantic/theme.config"
+    "semantic": {
+      "install": true,
+      "src": "./node_modules/semantic-ui/src/",
+      "config": "./src/less/semantic/theme.config"
     },
     "dir": {
-      "base": "/",
       "src": "./src/",
-      "html": "./src/html/",
-      "templates": "./src/template/",
-      "partials": "./src/template/partials/",
       "dist": "./public/"
     }
   },
   "scripts": {
-    "postinstall": "[ \"$npm_package_config_semantic_install\" = \"true\" ] && npm run semantic",
-    "clean": "rm -rf $npm_package_config_dir_dist",
-    "build": "npm run build:copy -s && npm run build:js -s && npm run build:css -s && npm run build:html -s",
+    "postinstall": "[ \"$npm_package_config_semantic_install\" = \"true\" ] && npm run semantic ",
+    "build": "npm run copy -s && npm run build:js -s && npm run build:css -s && npm run build:html -s && npm run build:cname -s ",
+    "build:clean": "rm -rf $npm_package_config_dir_dist ",
     "build:init": "mkdir -p ${npm_package_config_dir_dist}js && mkdir -p ${npm_package_config_dir_dist}css",
-    "build:copy": "npm run build:copy:assets -s && npm run build:copy:fonts -s && npm run build:copy:default -s",
-    "build:copy:default": "npm run build:copy:config -s && npm run build:copy:cheats -s ",
-    "build:copy:config": "cp ${npm_package_config_dir_src}config.json ${npm_package_config_dir_dist}config.json",
-    "build:copy:cheats": "cp -r ${npm_package_config_dir_src}cheats ${npm_package_config_dir_dist}cheats",
-    "build:copy:assets": "cp -r ${npm_package_config_dir_src}assets/* $npm_package_config_dir_dist",
-    "build:copy:fonts": "[ \"$npm_package_config_semantic_install\" = \"true\" ] && npm run semantic:fonts -s",
-    "build:html": "node ./src/lib/build.js",
-    "build:css": "[ \"$npm_package_config_minify\" = \"true\" ] &&  npm run build:css:minify -s || npm run build:css:default -s",
-    "build:css:default": "lessc ${npm_package_config_dir_src}less/index.less ${npm_package_config_dir_dist}css/styles.css",
-    "build:css:minify": "lessc ${npm_package_config_dir_src}less/index.less | uglifycss > ${npm_package_config_dir_dist}css/styles.css",
-    "build:js": "[ \"$npm_package_config_minify\" = \"true\" ] && npm run build:js:minify -s || npm run build:js:default -s",
-    "build:js:default": "browserify ${npm_package_config_dir_src}js/index.js -o ${npm_package_config_dir_dist}js/index.js",
-    "build:js:minify": "browserify ${npm_package_config_dir_src}js/index.js | uglifyjs -mc > ${npm_package_config_dir_dist}js/index.js",
-    "build:development": "NODE_ENV=development npm run build",
-    "build:production": "NODE_ENV=production npm run build",
-    "prebuild": "npm run clean -s && npm run build:init -s",
-    "deploy": "[ ${GH_TOKEN} ] && npm run deploy:travis -s || npm run deploy:local -s",
-    "deploy:local": "repository=$(echo $npm_package_repository_url | sed 's/.*+//') && cd $npm_package_config_dir_dist && git push --force --quiet $repository master:gh-pages > /dev/null 2>&1",
-    "deploy:travis": "cd $npm_package_config_dir_dist && git push --force --quiet \"https://${GH_TOKEN}@${GH_REF}\" master:gh-pages > /dev/null 2>&1",
-    "predeploy": "npm run build && cd $npm_package_config_dir_dist && git init && git config user.name $npm_package_config_deploy_name && git config user.email $npm_package_config_deploy_email && git add . && git commit -m \"$npm_package_config_deploy_message\"",
-    "semantic": "npm install semantic-ui",
-    "semantic:fonts": "cp -r ${npm_package_config_semantic_src}themes/default/assets/fonts ${npm_package_config_dir_dist}fonts/semantic",
-    "semantic:init": "mkdir -p './semantic/src/definitions' && echo '{\"base\":\"semantic/\",\"paths\":{\"source\":{\"config\":\"src/theme.config\",\"definitions\":\"src/definitions/\",\"site\":\"src/site/\",\"themes\":\"src/themes/\"},\"output\":{\"packaged\":\"dist/\",\"uncompressed\":\"dist/components/\",\"compressed\":\"dist/components/\",\"themes\":\"dist/themes/\"},\"clean\":\"dist/\"},\"permission\":false,\"rtl\":false}' > './semantic.json'",
-    "presemantic" : "npm run semantic:init -s",
-    "postsemantic" : "echo \"@import '${npm_package_config_semantic_config}';\" > \"${npm_package_config_semantic_src}theme.config\"",
-    "watch": "nodemon -q -w $npm_package_config_dir_src --ext '.' --exec 'npm run build'",
-    "watch:js": "nodemon -q -w ${npm_package_config_dir_src}js --ext '.' --exec 'npm run build:js'",
-    "watch:css": "nodemon -q -w ${npm_package_config_dir_src}less --ext '.' --exec 'npm run build:css'",
-    "serve": "http-server -p 9090 $npm_package_config_dir_dist",
-    "live-reload": "live-reload --port 9091 $npm_package_config_dir_dist",
-    "open": "opener http://localhost:9090",
-    "dev": "npm run open -s && parallelshell 'npm run live-reload -s' 'npm run serve -s' 'npm run watch -s'",
-    "test": "echo 'Error: no test specified' && exit 1"
+    "build:html": "ibuild static ",
+    "build:cname": "[ ${npm_package_config_domain} ] && echo $npm_package_config_domain > \"${npm_package_config_dir_dist}CNAME\" || echo '' ",
+    "build:css": "[ \"$npm_package_config_minify\" = \"true\" ] &&  npm run build:css:minify -s || npm run build:css:default -s ",
+    "build:css:default": "lessc ${npm_package_config_dir_src}less/index.less ${npm_package_config_dir_dist}css/styles.css ",
+    "build:css:minify": "lessc ${npm_package_config_dir_src}less/index.less | uglifycss > \"${npm_package_config_dir_dist}css/styles.css\" ",
+    "build:js": "[ \"$npm_package_config_minify\" = \"true\" ] && npm run build:js:minify -s || npm run build:js:default -s ",
+    "build:webpack": "node_modules/.bin/webpack ",
+    "build:js:default": "browserify ${npm_package_config_dir_src}js/index.js -o ${npm_package_config_dir_dist}js/index.js ",
+    "build:js:minify": "browserify ${npm_package_config_dir_src}js/index.js | uglifyjs -mc > \"${npm_package_config_dir_dist}js/index.js\" ",
+    "build:development": "cross-env NODE_ENV=development npm run build ",
+    "build:production": "cross-env NODE_ENV=production npm run build ",
+    "prebuild": "npm run build:clean -s && npm run build:init -s ",
+    "copy": "npm run copy:assets -s && npm run copy:fonts -s && npm run copy:default -s ",
+    "copy:default": "cp ${npm_package_config_dir_src}config.json ${npm_package_config_dir_dist}config.json && cp -r ${npm_package_config_dir_src}cheats ${npm_package_config_dir_dist}cheats",
+    "copy:assets": "cp -r ${npm_package_config_dir_src}assets/* $npm_package_config_dir_dist ",
+    "copy:fonts": "[ \"$npm_package_config_semantic_install\" = \"true\" ] && npm run semantic:fonts -s ",
+    "deploy": "[ ${GH_TOKEN} ] && npm run deploy:travis -s || npm run deploy:local -s ",
+    "deploy:local": "repository=$(echo $npm_package_repository_url | sed 's/.*+//') && cd $npm_package_config_dir_dist && git push --force --quiet $repository ${npm_package_config_deploy_branch} > /dev/null 2>&1 ",
+    "deploy:travis": "cd $npm_package_config_dir_dist && git push --force --quiet \"https://${GH_TOKEN}@${GH_REF}\" ${npm_package_config_deploy_branch} > /dev/null 2>&1 ",
+    "predeploy": "npm run build -s && cd $npm_package_config_dir_dist && git init && git config user.name $npm_package_config_deploy_name && git config user.email $npm_package_config_deploy_email && git add -A . && git commit -am \"$npm_package_config_deploy_message\" ",
+    "semantic": "npm install semantic-ui --save",
+    "semantic:init": "mkdir -p './semantic/src/definitions' && echo '{\"base\":\"semantic/\",\"paths\":{\"source\":{\"config\":\"src/theme.config\",\"definitions\":\"src/definitions/\",\"site\":\"src/site/\",\"themes\":\"src/themes/\"},\"output\":{\"packaged\":\"dist/\",\"uncompressed\":\"dist/components/\",\"compressed\":\"dist/components/\",\"themes\":\"dist/themes/\"},\"clean\":\"dist/\"},\"permission\":false,\"rtl\":false}' > './semantic.json' ",
+    "semantic:fonts": "cp -r ${npm_package_config_semantic_src}themes/default/assets/fonts ${npm_package_config_dir_dist}fonts/semantic ",
+    "presemantic": "npm run semantic:init -s ",
+    "postsemantic": "echo \"@import '${npm_package_config_semantic_config}';\" > \"${npm_package_config_semantic_src}theme.config\" ",
+    "watch": "nodemon -q -w $npm_package_config_dir_src --ext '.' --exec 'npm run build' ",
+    "watch:js": "nodemon -q -w ${npm_package_config_dir_src}js --ext '.' --exec 'npm run build:js' ",
+    "watch:css": "nodemon -q -w ${npm_package_config_dir_src}less --ext '.' --exec 'npm run build:css' ",
+    "serve": "http-server -p 9090 $npm_package_config_dir_dist ",
+    "live-reload": "live-reload --port 9091 $npm_package_config_dir_dist ",
+    "open": "opener http://localhost:9090 ",
+    "dev": "npm run open -s && parallelshell 'npm run live-reload -s' 'npm run serve -s' 'npm run watch -s' ",
+    "test": "echo 'Error: no test specified' && exit 1 "
   },
   "bugs": {
     "url": "https://github.com/websemantics/pyrocms-cheatsheet/issues"
   },
   "keywords": [
-    "cheatsheet",
-    "pyrocms",
-    "laravel"
+    "node.js",
+    "ibuild.io",
+    "pyrocms-cheatsheet"
   ],
   "author": "Adnan M.Sagar, PhD.",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "*",
+    "less": "*",
+    "uglifycss": "*",
+    "uglifyjs": "*",
+    "babel-core": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.1",
+    "browserify-hmr": "^0.3.1",
+    "cross-env": "^1.0.6",
     "http-server": "*",
+    "vueify": "^9.1.0",
+    "nodemon": "*",
     "live-reload": "*",
     "opener": "*",
     "parallelshell": "*"
   },
   "dependencies": {
+    "google-code-prettify": "*",
+    "handlebars": "^4.0.5",
     "jquery": "^2.1.4",
     "jquery-highlight": "*",
-    "google-code-prettify": "*",
-    "isotope-layout": "*",
-    "less": "*",
-    "bragit": "*",
-    "uglifyjs": "*",
-    "uglifycss": "*",
-    "browserify": "*",
-    "handlebars": "^4.0.5",
-    "metalsmith": "^2.1.0",
-    "metalsmith-html-minifier": "^2.0.0",
-    "metalsmith-layouts": "^1.6.4",
-    "metalsmith-markdown": "^0.2.1"
+    "masonry-plus": "*",
+    "semantic-ui": "^2.2.1"
+  },
+  "browserify": {
+    "transform": [
+      "vueify",
+      "babelify"
+    ]
   }
 }
