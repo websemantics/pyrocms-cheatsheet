@@ -98,8 +98,7 @@
     "handlebars": "^4.0.5",
     "jquery": "^2.1.4",
     "jquery-highlight": "*",
-    "masonry-plus": "*",
-    "semantic-ui": "^2.2.1"
+    "masonry-plus": "*"
   },
   "browserify": {
     "transform": [
