@@ -41,6 +41,26 @@ _ _ :                                                                   |_|: | /
 This document has the full list of commands, code samples and best use practices for PyroCMS 3 development under different categories. You can also try the [Live App](http://websemantics.github.io/pyrocms-cheatsheet) for an enhanced user experience.
 
 
+## Table of Contents
+
+- [Cheatsheets](#cheatsheets)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Settings](#settings)
+  - [Artisan](#artisan)
+  - [Pyro Magic](#pyro-magic)
+  - [Views](#views)
+  - [Twig](#twig)
+- [Development](#development)
+  - [Install](#install)
+  - [Build](#build)
+  - [Watch](#watch)
+- [Related](#related)
+- [Contribution](#contribution)
+- [Credits](#credits)
+- [License](#license)
+
+
 ## Cheatsheets
 
 #### Installation
