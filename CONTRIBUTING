@@ -1,16 +1,22 @@
-0.1.2
+1.1.3
+  date: 2016-08-17
+  changes:
+  - Update logo
+  - Add cheatsheets in Readme.md
+
+1.1.2
   date: 2016-07-04
   changes:
   - Use Masonry Plus module
 
-0.1.1
+1.1.1
   date: 2016-06-17
   changes:
   - Update logo
   - Major code refactoring
   - Improved node-based build system
 
-0.1.0
+1.1.0
   date: 2016-05-23
   changes:
   - First release
