@@ -38,6 +38,9 @@ _ _ :                                                                   |_|: | /
 
 ```              
 
+# PyroCMS 3 Cheatsheets
+
+
 This document has the full list of commands, code samples and best use practices for PyroCMS 3 development under different categories. You can also try the [Live App](http://websemantics.github.io/pyrocms-cheatsheet) for an enhanced user experience.
 
 
