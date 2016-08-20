@@ -63,7 +63,7 @@ _ _ :                                                                   |_|: | /
 
 ## Cheatsheets
 
-#### Installation
+### Installation
 
 ```bash
 # Use 'create-project' command to install PyroCMS
@@ -81,7 +81,7 @@ sudo chown -R user:admin path_to/pyrocms
 ```
 
 
-#### Configuration
+### Configuration
 
 ```php
 // Overrid Streams Platform configuration values at
@@ -108,7 +108,7 @@ $value = config('vendor.module.slug::name.key');
 ```
 
 
-#### Settings
+### Settings
 
 ```php
 // To read a value from the settings module inject
@@ -122,7 +122,7 @@ function index(SettingRepositoryInterface $settings)
 ```
 
 
-#### Artisan
+### Artisan
 
 ```bash
 # Combine all configuration files into a single file
@@ -133,58 +133,56 @@ php artisan down
 php artisan down
 # Set application key
 php artisan key:generate
-            </pre>
-            <h4>Cache</h4>
-            <pre class="prettyprint lang-bsh">
+
+********* CACHE ********* 
+
 # Clear the cache for assets
 php artisan asset:clear
 # Clear the cache for views
 php artisan view:clear
 # Clear the cache for twig
 php artisan twig:clean
-            </pre>
-            <h4>Streams</h4>
-            <pre class="prettyprint lang-bsh">
+
+********* STREAMS ********* 
+
 # Create a stream migration (fields or stream)
 php artisan make:migration create_stream_fields
 --addon=vendor.module.slug
-                </pre>
-            <h4>Addons</h4>
-            <pre class="prettyprint lang-bsh">
+
+********* ADDONS ********* 
+
 # Create a theme
 php artisan make:addon vendor.theme.slug
 # Create a shared theme
 php artisan make:addon vendor.theme.slug --shared
 # Create a plugin
 php artisan make:addon vendor.plugin.slug
-            </pre>
-            <h4>Modules</h4>
-            <pre class="prettyprint lang-bsh">
+
+********* MODULES ********* 
+
 # Create a module WITH the builder Extension, add '--shared' for shared
 php artisan make:module vendor slug
-                </pre>
-                <pre class="prettyprint lang-bsh">
+
 # Create a module WITHOUT Builder Extension, add '--shared' for shared
 php artisan make:addon ventor.module.slug
-            </pre>
-            <pre class="prettyprint lang-bsh">
+
 # Install, uninstall and reinstall a module
 php artisan module:install vendor.module.slug
 php artisan module:uninstall vendor.module.slug
 php artisan module:reinstall vendor.module.slug
 # Seed the module's streams / entities
 php artisan db:seed --addon=vendor.module.slug
-                </pre>
-            <h4>Entities</h4>
-            <pre class="prettyprint lang-bsh">
+
+********* ENITITIES ********* 
+
 # Create a stream entity. This will create a stream
 # migratiom, and an entity folder inside the addon's
 # 'src' folder.
 php artisan make:stream stream_slug
 ventor.addon_type.addon_slug
-            </pre>
-            <h4>Migration</h4>
-            <pre class="prettyprint lang-bsh">
+
+********* MIGRATION ********* 
+
 # Manage migrations manually
 php artisan migrate --addon=vendor.module.slug
 php artisan migrate:reset --addon=vendor.module.slug
@@ -192,7 +190,7 @@ php artisan migrate:refresh --addon=vendor.module.slug
 ```
 
 
-#### Pyro Magic
+### Pyro Magic
 
 ```bash
 #Your own Builder, add to bindings in service provider
@@ -207,7 +205,7 @@ protected $bindings = [
 ```
 
 
-#### Views
+### Views
 
 ```php
 // Return a view using 'view' helper function.
@@ -245,7 +243,7 @@ protected $overrides = [
 ```
 
 
-#### Twig
+### Twig
 
 ```php
 // Loop through files
@@ -277,7 +275,7 @@ protected $overrides = [
 If you want to make code contribution, or use this code for your own project, here are some of the commands included in `package.json` to get you started.
 
 
-#### Install
+### Install
 
 Clone this repo and install node dependencies
 
@@ -286,14 +284,14 @@ npm install
 ```
 
 
-#### Build
+### Build
 
 ``` bash
 npm run build
 ```
 
 
-#### Watch
+### Watch
 
 ``` bash
 npm run watch
