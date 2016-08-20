@@ -134,7 +134,7 @@ php artisan down
 # Set application key
 php artisan key:generate
 
-********* CACHE ********* 
+# ********* CACHE ********* 
 
 # Clear the cache for assets
 php artisan asset:clear
@@ -143,13 +143,13 @@ php artisan view:clear
 # Clear the cache for twig
 php artisan twig:clean
 
-********* STREAMS ********* 
+# ********* STREAMS ********* 
 
 # Create a stream migration (fields or stream)
 php artisan make:migration create_stream_fields
 --addon=vendor.module.slug
 
-********* ADDONS ********* 
+# ********* ADDONS ********* 
 
 # Create a theme
 php artisan make:addon vendor.theme.slug
@@ -158,7 +158,7 @@ php artisan make:addon vendor.theme.slug --shared
 # Create a plugin
 php artisan make:addon vendor.plugin.slug
 
-********* MODULES ********* 
+# ********* MODULES ********* 
 
 # Create a module WITH the builder Extension, add '--shared' for shared
 php artisan make:module vendor slug
@@ -173,7 +173,7 @@ php artisan module:reinstall vendor.module.slug
 # Seed the module's streams / entities
 php artisan db:seed --addon=vendor.module.slug
 
-********* ENITITIES ********* 
+# ********* ENITITIES ********* 
 
 # Create a stream entity. This will create a stream
 # migratiom, and an entity folder inside the addon's
@@ -181,7 +181,7 @@ php artisan db:seed --addon=vendor.module.slug
 php artisan make:stream stream_slug
 ventor.addon_type.addon_slug
 
-********* MIGRATION ********* 
+# ********* MIGRATION ********* 
 
 # Manage migrations manually
 php artisan migrate --addon=vendor.module.slug
