@@ -17,6 +17,20 @@
         background: none;
     }
 }
+/**************************** [ prism module] *****************************/
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: none;
+  padding: 0px;
+}
+
+.inverted {
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+  	background: none;
+    padding: 0px;
+  }
+}
 /**************************** [ logo module] *****************************/
 svg.logo {
     width: @logoWidth;
@@ -68,11 +82,11 @@ svg.logo {
     }
     p {
         font-weight: 300;
-        font-size: 18px;
+        font-size: @baseFonSize;
     }
     a {
         color: @pageLinkColor;
-        font-size: 18px;
+        font-size: @baseFonSize;
         &:hover {
             color: @pageLinkHoverColor;
         }
@@ -95,28 +109,30 @@ svg.logo {
     font-family: @secondFontName;
     &.vertical {
         background-color: @sidebarBackgroundColor;
-        div {
-            padding: 4rem 0 3rem;
-            text-align: center;
-            float: none;
-            width: auto;
-            overflow: hidden;
-            background: @footerBackgroundColor;
-            &:first-child {
-                width: @sidebarWidth;
-                float: left;
-                background-color: @sidebarBackgroundColor;
-                @media only screen and (max-width: @wideResolution) {
-                    & { /* hide toc side of the footer */
-                        display: none!important;
-                    }
-                }
-            }
-            &:first-child when (@footerFullWide) {
-                /* hide left side of the footer when full width */
-                display: none!important;
-            }
+        div{
+          padding: @footerDivPadding;
+          float: none;
+          overflow: hidden;
+          background: @footerBackgroundColor;
         }
+        div when not (@footerFreeStyle){
+          text-align: center;
+          width: auto;
+          &:first-child {
+              width: @sidebarWidth;
+              float: left;
+              background-color: @sidebarBackgroundColor;
+              @media only screen and (max-width: @wideResolution) {
+                  & { /* hide toc side of the footer */
+                      display: none!important;
+                  }
+              }
+          }
+          &:first-child when (@footerFullWide) {
+              /* hide left side of the footer when full width */
+              display: none!important;
+          }
+      }
     }
     .heart {
         vertical-align: middle;
@@ -167,28 +183,56 @@ svg.logo {
 /************************** [ main menu module] **************************/
 .ui.menu.main {
   border: 0!important;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: @mainMenuBackground;
+  font-family: @secondFontName;
+  transition:
+    box-shadow 0.5s ease,
+    padding 0.5s ease
+  ;
+  &.fixed {
+    background-color: @mainMenuFixedBackground;
+    border: 1px solid #DDD;
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    &.inverted {
+      background-color: @mainInvertedMenuFixedBackground;
+    }
+  }
+  .item .logo {
+    margin-right: 1.5em;
+  }
   .header.title {
       margin: 0;
       padding-left: 10px;
   }
+  & > .container {
+      margin: @mainMenuContainerMargin!important;
+      width: 100% !important;
+      max-width: none !important;
+      & > .launch.item {
+        display: @mainMenuLaunchDisplay!important;
+      }
+  }
   @media only screen and (min-width: @wideResolution /* i.e. 1200px */) {
-    &, &.placeholder{
+    display: @mainMenuFullDisplay!important;
+    &.placeholder{
       display: none!important;
     }
   }
   @media only screen and (max-width: @wideResolution /* i.e. 1200px */) {
-    & > .container {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        max-width: none !important;
-    }
+    /* add custom styles */
   }
   @media only screen and (max-width: @narrowResolution) {
       .header.title {
           display: none;
       }
   }
+}
+/* setup menu through main-menu-container */
+.main-menu-container{
+  padding-top: 1px;
 }
 /**************************** [ masonry module] ****************************/
 .masonry {

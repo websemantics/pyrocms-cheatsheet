@@ -10,8 +10,11 @@
 @fontSize : @baseEmSize;
 @fontName: @baseFontName;
 @pageBackground: @basePageBackground;
-@textColor: @baseTextColor;
 @headerFont: @secondFontName, sans-serif;
 @linkColor: @baseLinkColor;
 @linkHoverColor: @baseLinkHoverColor;
 @lineHeight: @baseLineHeight;
+@textColor: @baseTextColor;
+@darkTextColor: @baseDarkTextColor;
+@mutedTextColor: @baseMutedTextColor;
+@lightTextColor: @baseLightTextColor;

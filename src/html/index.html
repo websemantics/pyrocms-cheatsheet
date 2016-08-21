@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href=/img/favicon.png>
+    <meta name=author content="Adnan Sh. Sagar, PhD.">
+    <title>Cheatsheet</title>
+    <meta name=description content="A quick reference cheat sheet for PyroCMS 3.">
+    <meta name=keywords content="Laravel, Spark">
+    <link href=/css/styles.css rel=stylesheet>
+    <script id=segment-template type=text/x-handlebars-template>
+        <div class="ui clearing brick segment" data-filter="{{id}}">
+            <div class="header"><i class="right floated {{icon}} icon"></i> {{title}}
+            </div>
+            <div class="ui divider"></div>
+            <pre class="language-{{lang}}">{{{content}}}</pre>
+        </div>
+    </script>
+    <script id=button-template type=text/x-handlebars-template>
+        <div data-filter="{{id}}" class="ui {{color}} inverted tiny basic button">{{title}}</div>
+    </script>
+    <script id=bragit-template type=text/x-handlebars-template>
+        <a class="ui labeled mini button github-{{repository}}-stars">
+            <div class="ui  mini button">
+                <i class="star icon"></i>Stars
+            </div>
+            <div class="ui basic  left pointing label">
+                <i class="spinner loading icon"></i>
+            </div>
+        </a>
+        <a class="ui  mini button github-{{repository}}-github"> <i class="github icon"></i> Github </a>
+    </script>
+</head>
+
+<body class="minimal pushable">
+    <div id=slider class="ui vertical sidebar menu left">
+        <div class=item>
+            <div class="ui right aligned grid">
+                <div class="sixteen wide column">
+                    <div class="ui checkbox lights-toggle">
+                        <input type=checkbox tabindex=0 class=hidden>
+                        <label><i class="ui icon moon"></i></label>
+                    </div>&nbsp;
+                    <div class="ui checkbox comments-toggle">
+                        <input type=checkbox tabindex=0 class=hidden>
+                        <label><i class="ui icon hide"></i></label>
+                    </div>&nbsp;
+                    <div class="ui checkbox shuffle-toggle">
+                        <input type=checkbox tabindex=0 class=hidden>
+                        <label><i class="ui icon wizard"></i></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=item>
+            <div class=filter>
+                <div data-filter=* class="ui inverted tiny basic button">All</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui borderless fixed main menu">
+        <div class="ui container"><a class="launch icon item"><i class="content icon"></i></a>
+            <div class=item>
+                <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 512 512" class=logo>
+                    <path d="M416.83 0c1.25 18.9 5.44 33.4 4.25 54.37-.1 1.2-.28 2.37-.43 3.54-28.52-18.63-61.8-29.03-96.23-28.87-5.4.03-10.84.3-16.28.84-5.63.37-11.02 1-16.3 1.97-29.57 5.12-62.07 13.37-91.8 32.13-1.82-2.16-3.53-4.37-5.1-6.4-3.34-6.5-4.92-18.74-7.1-30-.34.05-3.67 4.62-7.63 10.34-10.78 15.56-14.32 34.47-9.87 49.3-14.84 14.67-21.4 25.8-31.48 43.55 0 0 .08.26-.1.4-2.5 5.95-6.7 13-9.8 20.66-4.46 10.97-10.34 26.7-14.03 35.98-31.8 75.63-64.25 89.6-81.52 90.82-6.77.64-11.3 7.66-8.88 14 6.15 14.8 20.5 35.73 55.6 42.06l.4.1 2.75.3c3.7.5 7.12.85 10.82 1.04l.36-.1c2.75.33 5.5.16 7.95.07 47.55-.64 74.72-29.9 77.66-32.88 15.77-16.06 30.32-38.35 40.44-69.23 8-24.05 14.1-38.97 24.43-56.28 6.4-9.15 11.25-15.97 19.07-22 9.18-6.97 23.68-14 35.43-16.85 44.22-10.7 88.4 15.57 98.8 58.68 10.38 42.92-17 86.55-61.4 97.28-28.18 6.82-56.74-1.77-76.2-20.27-3.35-3.14-9.35-1.87-11.2 2.72-16.42 38.34-39.77 61.46-64.67 73.7-5.26 2.75-6.2 9.87-1.77 13.83 17.88 16.82 51.4 39.52 101.4 42.45l3.96.03c29.63 1.23 64.04-3.4 96.66-15.53 7.3-2.37 14.32-5.2 21.07-8.44l7.77 8.64c17.5 20.3 14.07 47.25-7.9 63.85-10.3 8.1-44.3 18.8-58.73 18.8-25.4-.37-74.95-19.12-86.87-28.4-35.86-20.54-76.87-49-118.47-59.8-24.38-5.52-51.14-4.76-67.63 1.5-14.56 6.7-19.44 2.04-23-18.8l-1.03-24.37-16.16 15.12c-29.52 28.04-34.3 73.8-12.68 121 6.94 15.6 14.87 26.6 14.87 26.6s1.3-9.5 1.95-15.04c1.9-16.22 12.7-35.5 26.78-43.27 7.2-4.05 27.83-9.23 46.03-11.8 19.34-5 32.8-9.33 32.8-9.33s-11.6-3.67-26.64-9.12c-23.98-6.27-23.7-9.58-12.36-14 14.08-5.9 35.37-1.48 61.8 13.28 46.07 26.8 88.55 61.73 137.7 81.16 24.38 8.85 32.9 12.2 68.66 12.65 34.68.44 44.64-4.18 61.8-11.2 35.38-14.74 60.1-49.44 60.1-84.1 0-17.72-9.6-46.84-20.6-63.07-3.5-5.22-7.65-9.93-11.3-13.7 12.57-14.17 22.75-30.74 29.75-50.06 14.15-35.42 18.13-76.2 8.27-116.97-4.32-17.9-11-34.57-19.56-49.77 3.4-13.25 4.1-30.73 1.3-42.26C475.4 53.2 450.75 19.68 426.6 5.9L416.83 0zM261.46 319.57c4.05-.15 7.68 3.5 8.53 12.87.4 4.5 11.62 1.9 15.9 6.9 2.92 3.26 2.7 5.8-.17 9.07-6.58 7.48-15.1 9.85-31.47 8.73-24.33-1.34-25.3-2.18-15.5-12.94 4.75-5.02 10.43-12.64 12.7-16.76 2.52-4.7 6.4-7.75 10-7.87z"
+                    />
+                </svg>
+            </div>
+            <div class=item>
+                <h3 class="header cheats-title">Cheatsheet</h3></div>
+            <div class="right menu">
+                <div class="ui right aligned category search item">
+                    <div id=header-search class="ui transparent icon input">
+                        <input class=search-input placeholder=Search...> <i class="search link icon"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=pusher>
+        <div class="full height">
+            <div class=toc>
+                <div class="ui vertical sticky menu bottom">
+                    <div class=item>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 512 512" class=logo>
+                                            <path d="M416.83 0c1.25 18.9 5.44 33.4 4.25 54.37-.1 1.2-.28 2.37-.43 3.54-28.52-18.63-61.8-29.03-96.23-28.87-5.4.03-10.84.3-16.28.84-5.63.37-11.02 1-16.3 1.97-29.57 5.12-62.07 13.37-91.8 32.13-1.82-2.16-3.53-4.37-5.1-6.4-3.34-6.5-4.92-18.74-7.1-30-.34.05-3.67 4.62-7.63 10.34-10.78 15.56-14.32 34.47-9.87 49.3-14.84 14.67-21.4 25.8-31.48 43.55 0 0 .08.26-.1.4-2.5 5.95-6.7 13-9.8 20.66-4.46 10.97-10.34 26.7-14.03 35.98-31.8 75.63-64.25 89.6-81.52 90.82-6.77.64-11.3 7.66-8.88 14 6.15 14.8 20.5 35.73 55.6 42.06l.4.1 2.75.3c3.7.5 7.12.85 10.82 1.04l.36-.1c2.75.33 5.5.16 7.95.07 47.55-.64 74.72-29.9 77.66-32.88 15.77-16.06 30.32-38.35 40.44-69.23 8-24.05 14.1-38.97 24.43-56.28 6.4-9.15 11.25-15.97 19.07-22 9.18-6.97 23.68-14 35.43-16.85 44.22-10.7 88.4 15.57 98.8 58.68 10.38 42.92-17 86.55-61.4 97.28-28.18 6.82-56.74-1.77-76.2-20.27-3.35-3.14-9.35-1.87-11.2 2.72-16.42 38.34-39.77 61.46-64.67 73.7-5.26 2.75-6.2 9.87-1.77 13.83 17.88 16.82 51.4 39.52 101.4 42.45l3.96.03c29.63 1.23 64.04-3.4 96.66-15.53 7.3-2.37 14.32-5.2 21.07-8.44l7.77 8.64c17.5 20.3 14.07 47.25-7.9 63.85-10.3 8.1-44.3 18.8-58.73 18.8-25.4-.37-74.95-19.12-86.87-28.4-35.86-20.54-76.87-49-118.47-59.8-24.38-5.52-51.14-4.76-67.63 1.5-14.56 6.7-19.44 2.04-23-18.8l-1.03-24.37-16.16 15.12c-29.52 28.04-34.3 73.8-12.68 121 6.94 15.6 14.87 26.6 14.87 26.6s1.3-9.5 1.95-15.04c1.9-16.22 12.7-35.5 26.78-43.27 7.2-4.05 27.83-9.23 46.03-11.8 19.34-5 32.8-9.33 32.8-9.33s-11.6-3.67-26.64-9.12c-23.98-6.27-23.7-9.58-12.36-14 14.08-5.9 35.37-1.48 61.8 13.28 46.07 26.8 88.55 61.73 137.7 81.16 24.38 8.85 32.9 12.2 68.66 12.65 34.68.44 44.64-4.18 61.8-11.2 35.38-14.74 60.1-49.44 60.1-84.1 0-17.72-9.6-46.84-20.6-63.07-3.5-5.22-7.65-9.93-11.3-13.7 12.57-14.17 22.75-30.74 29.75-50.06 14.15-35.42 18.13-76.2 8.27-116.97-4.32-17.9-11-34.57-19.56-49.77 3.4-13.25 4.1-30.73 1.3-42.26C475.4 53.2 450.75 19.68 426.6 5.9L416.83 0zM261.46 319.57c4.05-.15 7.68 3.5 8.53 12.87.4 4.5 11.62 1.9 15.9 6.9 2.92 3.26 2.7 5.8-.17 9.07-6.58 7.48-15.1 9.85-31.47 8.73-24.33-1.34-25.3-2.18-15.5-12.94 4.75-5.02 10.43-12.64 12.7-16.76 2.52-4.7 6.4-7.75 10-7.87z"
+                                            />
+                                        </svg>
+                                    </td>
+                                    <td>
+                                        <h3 class=cheats-title style="margin:0px; padding-left:10px">Cheatsheet</h3></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=item>
+                        <div class="ui action fluid inverted input">
+                            <input id=sidebar-search class=search-input placeholder=Search...>
+                            <button class="ui icon button search-btn"><i class="search icon"></i></button>
+                        </div>
+                    </div>
+                    <div class=item>
+                        <div class="ui right aligned grid">
+                            <div class="sixteen wide column">
+                                <div class="ui checkbox lights-toggle">
+                                    <input type=checkbox tabindex=0 class=hidden>
+                                    <label><i class="ui icon moon"></i></label>
+                                </div>&nbsp;
+                                <div class="ui checkbox comments-toggle">
+                                    <input type=checkbox tabindex=0 class=hidden>
+                                    <label><i class="ui icon hide"></i></label>
+                                </div>&nbsp;
+                                <div class="ui checkbox shuffle-toggle">
+                                    <input type=checkbox tabindex=0 class=hidden>
+                                    <label><i class="ui icon wizard"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=item>
+                        <div class=filter>
+                            <div data-filter=* class="ui inverted tiny basic button">All</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=content class="page masonry"></div>
+        </div>
+        <div class="ui vertical footer">
+            <div>&nbsp;</div>
+            <div class=right>Built with
+                <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 100 100" preserveAspectRatio=xMidYMid class=heart>
+                    <rect x=0 y=0 width=100 height=100 fill=none class=bk></rect>
+                    <g transform="translate(50 50)">
+                        <g>
+                            <g transform="translate(-50 -50)">
+                                <path d="M90,30.2c0-11-9-20.1-20-20.1s-20,9.1-20,20.2c0,0.2,0-0.3,0,0.7H50c0-1,0-0.6,0-0.8c0-11-9-20.1-20-20.1s-20,9.1-20,20.2 c0,0.2,0-0.3,0,0.7h0c0.3,20,30,39.5,40,55c10-15.5,39.7-35,40-55h0C90,30,90,30.4,90,30.2z" fill=#D8461D></path>
+                            </g>
+                            <animateTransform attributeName=transform type=scale from=1.3 to=0.9 dur=1s repeatCount=indefinite calcMode=spline values=1.3;0.9;1.1;0.9 keyTimes=0;0.3;0.301;1 keySplines="0 0.75 0.25 1;0 1 0 1;0 .75 .25 1"></animateTransform>
+                        </g>
+                    </g>
+                </svg> by &nbsp;
+                <br>
+                <h4><a href=/html/daylerees/ >Web Semantics, Inc.</a></h4></div>
+        </div>
+    </div>
+    <script src=/js/index.js></script>
+</body>
+
+</html>

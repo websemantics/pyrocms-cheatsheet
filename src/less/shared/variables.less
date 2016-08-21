@@ -1,5 +1,5 @@
 /*******************************
-        Generic Colors
+Generic Colors
 *******************************/
 @whiteColor: #ffffff;
 @blackColor: #333333;
@@ -9,31 +9,35 @@
 @localPrimaryColor: @blueColor;
 /* used locally in factory */
 /*******************************
-        Site Settings, less/semantic/site/globals/site.variables
+Site Settings, less/semantic/site/globals/site.variables
 *******************************/
 @baseImportGoogleFonts: false;
 @baseFontPath: '../../fonts/semantic';
 /*-------------------
-      Base Sizes
+Base Sizes
 --------------------*/
 @baseEmSize: 15px;
 @baseLineHeight: 1.8em;
 /*-------------------
-    Brand Colors
+Brand Colors
 --------------------*/
 @basePrimaryColor: @localPrimaryColor;
 @baseLightPrimaryColor: lighten(@basePrimaryColor, 10);
 @baseDarkPrimaryColor: darken(@basePrimaryColor, 10);
 /*-------------------
-    Font
+Font
 --------------------*/
+@baseFonSize: 18px;
 @baseFontName: 'Merriweather';
 @secondFontName: 'Open Sans';
 /*-------------------
-    Page
+Page
 --------------------*/
 @basePageBackground: @whiteColor;
 @baseTextColor: @blackColor;
+@baseDarkTextColor : darken(@baseTextColor, 10);
+@baseMutedTextColor : rgba(0, 0, 0, 0.6);
+@baseLightTextColor : lighten(@baseTextColor, 10);
 @pageWideMargin: 6em 2em;
 @pageMediumMargin: 6em 2em;
 @pageNarrowMargin: 6em 2em;
@@ -41,19 +45,28 @@
 @pageLinkHoverColor: darken(@greenColor, 10);
 @pageItemMarginBottom: 5em;
 /*-------------------
-    Link
+Main Menu
+--------------------*/
+@mainMenuFullDisplay: none;
+@mainMenuLaunchDisplay: flex;
+@mainMenuBackground: @whiteColor;
+@mainMenuFixedBackground: @whiteColor;
+@mainInvertedMenuFixedBackground: @invertedBackgroundColor;
+@mainMenuContainerMargin: 0;
+/*-------------------
+Link
 --------------------*/
 @baseLinkColor: @basePrimaryColor;
 @baseLinkHoverColor: darken(@basePrimaryColor, 10);
 /*******************************
-             Item, less/semantic/site/views/item.variables
+Item, less/semantic/site/views/item.variables
 *******************************/
 @baseHeaderColor: @baseTextColor;
 @baseMetaMargin: 0.5em 0 0.5em;
 @baseMetaColor: rgba(0, 0, 0, 0.6);
 @baseDividedBorder: 1px solid rgba(34,36,38,.15);
 /*******************************
-         Button Settings, less/semantic/site/elements/button.variables
+Button Settings, less/semantic/site/elements/button.variables
 *******************************/
 @buttonBackground: @basePrimaryColor;
 @buttonTextColor: @whiteColor;
@@ -63,7 +76,7 @@
 @buttonDownBackgroundColor: darken(@buttonBackground, 10);
 @buttonActiveHoverBackgroundColor: darken(@buttonBackground, 10);
 /*******************************
-         Input, less/semantic/site/elements/input.variables
+Input, less/semantic/site/elements/input.variables
 *******************************/
 @baseInputBackground: @whiteColor;
 @baseFocusBorderColor: #85B7D9;
@@ -90,9 +103,11 @@
 @sidebarLogoWidth: 100%;
 @sidebarLogoHeight: 100%;
 /* Footer */
+@footerFreeStyle: false;
 @footerBackgroundColor: @whiteColor;
 @footerDisplay: block;
 @footerFullWide: true;
+@footerDivPadding: 4rem 0 3rem;
 @footerHeartColor: #D8461D;
 @footerHeartWidth: 24px;
 @footerHeartHeight: 24px;
