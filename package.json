@@ -96,13 +96,12 @@
   },
   "dependencies": {
     "gitters": "*",
-    "handlebars": "^4.0.5",
+    "handlebars": "*",
     "jquery": "^2.1.4",
     "jquery-highlight": "*",
     "markdown-html-ast": "*",
     "masonry-plus": "*",
     "prismjs": "*",
-    "semantic-ui": "^2.2.2",
     "underscore.string": "*"
   },
   "browserify": {
