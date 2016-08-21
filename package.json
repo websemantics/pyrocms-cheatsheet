@@ -101,8 +101,7 @@
     "jquery-highlight": "*",
     "markdown-html-ast": "*",
     "masonry-plus": "*",
-    "prismjs": "^1.5.1",
-    "semantic-ui": "^2.2.2",
+    "prismjs": "*",
     "underscore.string": "*"
   },
   "browserify": {
