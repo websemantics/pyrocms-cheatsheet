@@ -74,17 +74,17 @@ composer create-project pyrocms/pyrocms --prefer-dist
 sudo chmod -R 777 path_to/pyrocms/storage
 sudo chmod -R 777 path_to/pyrocms/public/assets
 sudo chmod -R 777 path_to/pyrocms/bootstrap/cache
-# Or change pyrocms folder ownership
+# Or change PyroCMS folder ownership
 sudo chown -R user:admin path_to/pyrocms
-# Install Stream from command line
-./artisan install:streams
+# Remove installer-module from composer.json then run,
+composer update
 ```
 
 
 ### Configuration
 
 ```php
-// Overrid Streams Platform configuration values at
+// Overrid Streams configuration values at
 path_to/pyrocms/config/streams
 // Available config files for Streams located at
 path_to/pyrocms/vendor/anomaly/streams-platform
@@ -125,63 +125,69 @@ function index(SettingRepositoryInterface $settings)
 ### Artisan
 
 ```bash
-# Combine all configuration files into a single file
+# Cache all configuration files into a single file
 php artisan config:cache
-# Enable maintenance mode
+# Turn-on maintenance mode
 php artisan down
-# Disable maintenance mode
-php artisan down
+# Turn-off maintenance mode
+php artisan up
 # Set application key
 php artisan key:generate
 
-# ********* CACHE ********* 
+# ********* CACHE *********
 
-# Clear the cache for assets
-php artisan asset:clear
-# Clear the cache for views
+# Clear compiled assets cache
+php artisan assets:clear
+# Clear views cache
 php artisan view:clear
-# Clear the cache for twig
+# Clear twig cache
 php artisan twig:clean
+# Clear streams entry models
+php artisan streams:cleanup
+# Clear the route cache file
+php artisan route:clear
+# Clear http cache
+php artisan httpcache:clear
+# Clear missing files from files table
+php artisan files:clean
+# Clear debug storage
+php artisan debugbar:clear
+# Clear configuration cache
+php artisan config:clear
+# Clear application cache
+php artisan cache:clear
+# Clear application cache
+php artisan cache:clear
+# Clear expired password rest tokens
+php artisan auth:clear-resets
+# Clear compiled class file
+php artisan clear-compiled
 
-# ********* STREAMS ********* 
+# ********* STREAMS *********
 
 # Create a stream migration (fields or stream)
 php artisan make:migration create_stream_fields
 --addon=vendor.module.slug
 
-# ********* ADDONS ********* 
+# ********* ADDONS *********
 
 # Create a theme
 php artisan make:addon vendor.theme.slug
-# Create a shared theme
-php artisan make:addon vendor.theme.slug --shared
+# Create a share module
+php artisan make:addon vendor.module.slug --shared
 # Create a plugin
 php artisan make:addon vendor.plugin.slug
 
-# ********* MODULES ********* 
-
-# Create a module WITH the builder Extension, add '--shared' for shared
-php artisan make:module vendor slug
-
-# Create a module WITHOUT Builder Extension, add '--shared' for shared
-php artisan make:addon ventor.module.slug
+# ********* MODULES *********
 
 # Install, uninstall and reinstall a module
 php artisan module:install vendor.module.slug
 php artisan module:uninstall vendor.module.slug
 php artisan module:reinstall vendor.module.slug
-# Seed the module's streams / entities
+# Seed a module streams
 php artisan db:seed --addon=vendor.module.slug
 
-# ********* ENITITIES ********* 
-
-# Create a stream entity. This will create a stream
-# migratiom, and an entity folder inside the addon's
-# 'src' folder.
-php artisan make:stream stream_slug
-ventor.addon_type.addon_slug
-
-# ********* MIGRATION ********* 
+# ********* MIGRATION *********
 
 # Manage migrations manually
 php artisan migrate --addon=vendor.module.slug
@@ -313,9 +319,9 @@ npm run watch
 
 To contribute suggestions, best practices and or code samples for PyroCMS developments, please edit this document, `README.md` and create a pull request.
 
-The [online app](http://websemantics.github.io/pyrocms-cheatsheet) is designed to read and parse the markdown included in `README.md` and present it in a user-friendly fashion.
+The [online app](http://websemantics.github.io/pyrocms-cheatsheet) is designed to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
 
-Happy to accept external contributions to the project in the form of feedback, bug reports and even better - pull requests :)
+Happy to accept external contributions to the project in the form of feedback, bug reports and even better - pull requests.
 
 
 ## Credits
