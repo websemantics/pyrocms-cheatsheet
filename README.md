@@ -252,6 +252,10 @@ protected $overrides = [
 ### Twig
 
 ```php
+# Access addon properties
+{{ addon('settings').installed }}
+# Access config properties
+{{ config('vendor.module.name::filename.property') }}
 // Loop through files
 {% for file in entry.example %}
     File {{ loop.index }} is a {{ file.mime_type }}.
