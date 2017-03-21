@@ -308,7 +308,7 @@ Need help or have a question? post at [StackOverflow](https://stackoverflow.com/
 
 To contribute suggestions, best practices and or code samples for PyroCMS developments, please edit this document, `README.md` and create a pull request.
 
-The [online app](http://websemantics.github.io/pyrocms-cheatsheet) is designed to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
+The [live app](http://websemantics.github.io/pyrocms-cheatsheet) is built to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
 
 ## Related
 
