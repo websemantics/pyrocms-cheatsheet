@@ -276,29 +276,24 @@ protected $overrides = [
 
 If you want to make code contribution, or use this code for your own project, here are some of the commands included in `package.json` to get you started.
 
-### Install
-
 Clone this repo and install node dependencies
-
 ``` bash
 npm install
 ```
 
-### Build
-
+Build
 ``` bash
 npm run build
 ```
 
-### Watch
-
+Watch
 ``` bash
 npm run watch
 ```
 
 ## Support
 
-Need help or have a question? post at [StackOverflow](https://stackoverflow.com/questions/tagged/pyrocms-cheatsheet+websemantics).
+Need help or have a question? post at [StackOverflow](https://stackoverflow.com/questions/tagged/pyrocms-cheatsheet+pyrocms+websemantics).
 
 *Please don't use the issue trackers for support/questions.*
 
@@ -306,9 +301,9 @@ Need help or have a question? post at [StackOverflow](https://stackoverflow.com/
 
 ## Contribution
 
-To contribute suggestions, best practices and or code samples for PyroCMS developments, please edit this document, `README.md` and create a pull request.
+The [live app](http://websemantics.github.io/pyrocms-cheatsheet) was built to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
 
-The [live app](http://websemantics.github.io/pyrocms-cheatsheet) is built to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
+To contribute suggestions, best practices and or code samples for PyroCMS developments, please edit `README.md` and create a pull request.
 
 ## Related Projects
 
