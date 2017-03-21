@@ -1,5 +1,5 @@
 /*
-| cheatsheet : Generic project template
+| Cheatsheet : Generic project template
 |
 | @link      http://websemantics.ca
 | @author    Web Semantics, Inc. Dev Team <team@websemantics.ca>
@@ -32,12 +32,11 @@ $(function() {
     var lights = true
     var comments = true
     var icon = "file text outline"
-    var title = "PyroCMS 3 Cheatsheets"
+    var title = "PyroCMS 3 Cheatsheet"
     var repo = 'websemantics/pyrocms-cheatsheet'
     var colors = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey']
     var segment = Handlebars.compile($("#segment-template").html())
     var button = Handlebars.compile($("#button-template").html())
-    var bragit = Handlebars.compile($("#bragit-template").html())
 
     /**
      * Called when all cheat files are fully loaded
@@ -168,7 +167,6 @@ $(function() {
             }
         })
 
-        /* $('.item.bragit').append(bragit(cheats)); TODO */
         setTimeout(onCheatsheetsLoaded,300);
     })
 })

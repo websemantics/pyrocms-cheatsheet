@@ -102,6 +102,7 @@
     "markdown-html-ast": "*",
     "masonry-plus": "*",
     "prismjs": "*",
+    "semantic-ui": "^2.2.9",
     "underscore.string": "*"
   },
   "browserify": {
