@@ -310,15 +310,12 @@ To contribute suggestions, best practices and or code samples for PyroCMS develo
 
 The [live app](http://websemantics.github.io/pyrocms-cheatsheet) is built to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
 
-## Related
+## Related Projects
 
-[PyroCMS](https://github.com/pyrocms/pyrocms), an MVC PHP Content Management System built to be easy to use, theme and develop with. It is used by individuals and organizations of all sizes around the world.
-
-[Awesome PyroCMS](https://github.com/websemantics/awesome-pyrocms), a curated list of PyroCMS addons and resources.
-
-[Entity Builder](https://github.com/websemantics/entity_builder-extension), scaffold your PyroCMS apps in style for a more pleasurable and productive coding experience.
-
-[Auto Pyro](https://github.com/websemantics/auto-pyro), a PyroCMS deploy tool for faster and more pleasurable development experience.
+- [PyroCMS](https://github.com/pyrocms/pyrocms), an MVC PHP Content Management System built to be easy to use, theme and develop with. It is used by individuals and organizations of all sizes around the world.
+- [PyroCMS Builder](https://github.com/websemantics/entity_builder-extension), scaffold your PyroCMS 3 apps in style for a more pleasurable and productive coding experience.
+- [Auto Pyro](https://github.com/websemantics/auto-pyro), a PyroCMS deploy tool for faster and more pleasurable development experience.
+- [Awesome PyroCMS](https://github.com/websemantics/awesome-pyrocms), a curated list of PyroCMS addons and resources.
 
 ## Credits
 
