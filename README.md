@@ -9,24 +9,24 @@
                                                     /\    //''//\\ \.\                   (
    __   __   __   __                               //\\  /// ///\\\\\\\                 /
   |: | |''| |' | |  |                             ///\\\//////.|. \\ .\\               '
-  |                 |                            ///;:\\\\\\///.|.\\\\ \:\   
+  |                 |                            ///;:\\\\\\///.|.\\\\ \:\
   |:                :                             |:    |//////||\\\:\\\\'\
   |:   . .          | \    __  __  __     __   _  |:    ://;//,..';\\'\\\\\\
-   \  - - ----- -  /   |__|' ||: ||  |_ _|  :_: |_|                     |   
-    | --- - -     |                               |              [ ]   :|       
-    |:                                            |    --- - -         :|  __   __   __   __   __   __    _
-_ _ :                                                                   |_|: | /: | |  | |: | |  \.|' |_ |
+   \  - - ----- -  /   |__|' ||: ||  |_ _|  :_: |_|                     |
+    | --- - -     |                               |              [ ]   :|
+    |:                                            |    --- - -         :|  __   __   __   __   __   __  
+_ _ :                                                                   |_|: | /: | |  | |: | |  \.|' |_
     |            ____ _ _ _   __ _ ___     ___ _ _   _____ _ _ __       |
     |           | ,         \ \  '    \   /  ' ' /  |:           \\     :                   |
-    |                ,-.     | \       \ /      /   |    ,-.      |                         |     
-                |    |__)    |  \\      V      /    |    |__)     |                                       
-                |:      ____/    \            /     |:           <                __       .              |
-    |           |      ||         |:         |      |:     |\     \              /  |     / \             :
+    |                ,-.     | \       \ /      /   |    ,-.      |                         |
+                |    |__)    |  \\      V      /    |    |__)     |
+                |:      ____/    \            /     |:           <                __       .
+    |           |      ||         |:         |      |:     |\     \              /  |     / \
                 |       |         |   ['_]:  |      |      | \     \     |\     |    \_,-/   |
-    :           |_ _  __|         |_ _ ____. |      |  __ _|  \ ____\    | ` __  \    (      /            |
-                                                                          \/   \  ''-.  `__,'             |
-    |             |                                                       /    /      \    \          
-    |                   (           (                      )              |   |        |   |             
+    :           |_ _  __|         |_ _ ____. |      |  __ _|  \ ____\    | ` __  \    (      /
+                                                                          \/   \  ''-.  `__,'
+    |             |                                                       /    /      \    \
+    |                   (           (                      )              |   |        |   |
     |             (          )          )      )         (                \    \      /    /
                  ____) _ ___  __ _____ (___  _  _ ___ ___ _____            \    `-..-'    /
                 / _/ || | __|/  \_   _/' _/| || | __| __|_   _|   <------\  '-_   __ / __  \
@@ -37,9 +37,9 @@ _ _ :                                                                   |_|: | /
           ⎯ ⎯⎯ ⎯⎯⎯⎯⎯ ∈   A list of commands and features for PyroCMS 3 ⎯⎯⎯⎯⎯⎯ ⎯⎯ ⎯
 
 ```              
+> This document has the full list of commands, code samples and best use practices for PyroCMS 3 development under different categories.
 
-> This document has the full list of commands, code samples and best use practices for PyroCMS 3 development under different categories. You can also try the **[Live App](http://websemantics.github.io/pyrocms-cheatsheet)** for an enhanced user experience.
-
+#### Try [Live App](http://websemantics.github.io/pyrocms-cheatsheet) for an enhanced user experience.
 
 ## Table of Contents
 
@@ -60,7 +60,6 @@ _ _ :                                                                   |_|: | /
 - [Credits](#credits)
 - [License](#license)
 
-
 ## Cheatsheets
 
 ### Installation
@@ -79,7 +78,6 @@ sudo chown -R user:admin path_to/pyrocms
 # Remove installer-module from composer.json then run,
 composer update
 ```
-
 
 ### Configuration
 
@@ -107,7 +105,6 @@ $value = config('streams::assets.paths');
 $value = config('vendor.module.slug::name.key');
 ```
 
-
 ### Settings
 
 ```php
@@ -120,7 +117,6 @@ function index(SettingRepositoryInterface $settings)
     'vendor.module.slug::field_name','default'));
 }
 ```
-
 
 ### Artisan
 
@@ -195,7 +191,6 @@ php artisan migrate:reset --addon=vendor.module.slug
 php artisan migrate:refresh --addon=vendor.module.slug
 ```
 
-
 ### Pyro Magic
 
 ```bash
@@ -209,7 +204,6 @@ protected $bindings = [
 #Form based on Streams (no builder required)
 {{ form({'stream': slug, 'namespace': farts}).buttons(['cancel']).redirect('foo/bar').successMessage('You are da winner!') }}
 ```
-
 
 ### Views
 
@@ -248,7 +242,6 @@ protected $overrides = [
 'vendor.module.slug::streams/form/form'}}) }}
 ```
 
-
 ### Twig
 
 ```php
@@ -279,11 +272,9 @@ protected $overrides = [
 {{ form.close() |raw }}
 ```
 
-
 ## Development
 
 If you want to make code contribution, or use this code for your own project, here are some of the commands included in `package.json` to get you started.
-
 
 ### Install
 
@@ -293,13 +284,11 @@ Clone this repo and install node dependencies
 npm install
 ```
 
-
 ### Build
 
 ``` bash
 npm run build
 ```
-
 
 ### Watch
 
@@ -307,6 +296,19 @@ npm run build
 npm run watch
 ```
 
+## Support
+
+Need help or have a question? post at [StackOverflow](https://stackoverflow.com/questions/tagged/masonry-plus+websemantics).
+
+*Please don't use the issue trackers for support/questions.*
+
+*Star if you find this project useful, to show support or simply for being awesome :)*
+
+## Contribution
+
+To contribute suggestions, best practices and or code samples for PyroCMS developments, please edit this document, `README.md` and create a pull request.
+
+The [online app](http://websemantics.github.io/pyrocms-cheatsheet) is designed to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
 
 ## Related
 
@@ -318,22 +320,10 @@ npm run watch
 
 [Auto Pyro](https://github.com/websemantics/auto-pyro), a PyroCMS deploy tool for faster and more pleasurable development experience.
 
-
-## Contribution
-
-To contribute suggestions, best practices and or code samples for PyroCMS developments, please edit this document, `README.md` and create a pull request.
-
-The [online app](http://websemantics.github.io/pyrocms-cheatsheet) is designed to read and parse the markdown included in `README.md` and present it in a user-friendly manner.
-
-Happy to accept external contributions to the project in the form of feedback, bug reports and even better - pull requests.
-
-
 ## Credits
 
 This project was inspired by [Laravel5 Cheatsheet](https://github.com/summerblue/laravel5-cheatsheet)
 
-
 ## License
 
-[MIT license](http://opensource.org/licenses/mit-license.php)
-Copyright (c) Web Semantics, Inc.
+[MIT license](http://opensource.org/licenses/mit-license.php) Copyright (c) Web Semantics, Inc.
