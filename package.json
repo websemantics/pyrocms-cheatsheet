@@ -1,6 +1,6 @@
 {
   "name": "pyrocms-cheatsheet",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "A quick reference cheat sheet for PyroCMS 3.",
   "homepage": "https://github.com/websemantics/pyrocms-cheatsheet",
   "main": "index.js",

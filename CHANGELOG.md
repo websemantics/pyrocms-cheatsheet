@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this section.
 
 ## [1.2.0] - 2017-03-21
 ### Changed
-  - 
+  - Update to [Masonry Plus 1.1.0](https://github.com/websemantics/masonry-plus)
 
 ## [1.1.4] - 2016-08-20
 ### Changed
